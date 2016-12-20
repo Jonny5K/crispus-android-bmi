@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="listDisplayGeschlecht">
+		<item>male</item>
+		<item>female</item>
+	</string-array>
+	<string-array name="listReturnValueGeschlecht">
+		<item>maennlich</item>
+		<item>weiblich</item>
+	</string-array>
+	
+	<string-array name="listDisplaySprache">
+		<item>German (Deutsch)</item>
+		<item>English (Englisch)</item>
+	</string-array>
+	<string-array name="listReturnValueSprache">
+		<item>german</item>
+		<item>englisch</item>
+	</string-array>
+	
+	<string-array name="listDisplayEinheitensystem">
+		<item>Metric (cm and Kg)</item>
+		<item>Imperial (Inch and pound)</item>
+	</string-array>
+	<string-array name="listReturnValueEinheitensystem">
+		<item>metrisch</item>
+		<item>imperial</item>
+	</string-array>
+	
+	<string-array name="listDisplayZeitauswahl">
+		<item>weekly</item>
+		<item>monthly</item>
+		<item>quarterly</item>
+	</string-array>
+	<string-array name="listReturnValueZeitauswahl">
+		<item>7</item>
+		<item>31</item>
+		<item>93</item>
+	</string-array>
+	
+	<string-array name="listDisplayAmputationen">
+		<item>- no amputation -</item>
+		<item>one hand</item>
+		<item>both hands</item>
+		<item>one forearm and one hand</item>
+		<item>both forearms and hands</item>
+		<item>one whole arm</item>
+		<item>both whole arms</item>
+		<item>one foot</item>
+		<item>both feet</item>
+		<item>one lower leg and one foot</item>
+		<item>both lower legs and feet</item>
+		<item>one whole leg</item>
+		<item>both whole legs</item>
+	</string-array>
+	<string-array name="listReturnValueAmputationen">
+		<item>0</item>
+		<item>0.8</item>
+		<item>1.6</item>
+		<item>3</item>
+		<item>6</item>
+		<item>11.5</item>
+		<item>23</item>
+		<item>1.8</item>
+		<item>3.6</item>
+		<item>7.1</item>
+		<item>14.2</item>
+		<item>18.7</item>
+		<item>37.4</item>
+	</string-array>
+</resources>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+ 
+  
+  <style>html, body, h1, h2, h3, h4, p, span, div, li, ul {color: white;}</style>
+ </head>
+ <body>
+  <!--?xml version="1.0" encoding="utf-8" ?-->
+  <h3>Help for BMI-Spy</h3>
+  <p style="text-align: left;">Program to monitor your weight. It can be entered daily (given in kilograms or pounds).
+  With your weight, birth, size and gender the body-mass-index (BMI) for you will be calculated. The weight can be shown for the last 7 days, month or quarter. Because the body mass index is proportional to the weight, the graph can also display your reduction in BMI.</p>
+  <br/>
+  <h3>Function settings</h3>
+  <p style="text-align: left;">In the settings you can enter the following data:</p>
+  <ul>
+   <li>
+    <b>Body size:</b>
+    Mandatory information required to calculate the BMI.
+   </li>
+   <li>
+    <b>Gender:</b>
+    Mandatory information required to calculate the BMI.
+   </li>
+   <li>
+    <b>Birthday:</b>
+    Mandatory information required to calculate the BMI.
+   </li>
+   <li>
+    <b>Language:</b>
+    You can choose between german and english.
+   </li>
+   <li>
+    <b>System of Units:</b>
+    You can choose between metric and imperial.
+   </li>
+   <li>
+    <b>Period of time:</b>
+    Mandatory entry, specifies how many days to be displayed in the graph.
+   </li>
+   <li>
+    <b>Amputations:</b>
+    Here you can select whether you have amputations. If you have amputations, then your BMI value corresponding to the selected amputation is calculated using a correction value.
+   </li>
+  </ul>
+  <p></p>
+  <br/>
+  <h3>Function: Calculate-BMI</h3>
+  <p style="text-align: left;">In the screen &#34;BMI calculator&#34; you can enter the following data:</p>
+  <ul>
+   <li>
+    <b>Weight:</b>
+    Your actual weight.
+   </li>
+   <li>
+    <b>Age:</b>
+    Given in years.
+   </li>
+   <li>
+    <b>body size:</b>
+    It is measured in inches/cm.
+   </li>
+   <li>
+    <b>Gender:</b>
+    Indication of your gender.
+   </li>
+  </ul>
+  With that data, calculates the BMI value and then displays an information table. By the color you can see what area is your BMI.
+  <p></p>
+  <br/>
+  <h3>Function: Enter your weight</h3>
+  <p style="text-align: left;">In this screen you can enter the following data:</p>
+  <ul>
+   <li>
+    <b>Date:</b>
+    The current date.
+   </li>
+   <li>
+    <b>Weight:</b>
+    Your actual weight.
+   </li>
+  </ul> 
+  Only one weight measure can be stored per day. An existing weight value can be overwriten by specifying the same date.
+  <br/>
+  After adding a weight value, the current BMI is calculated.
+  <p></p>
+  <br/>
+  <h3>Function: Weight progress to date</h3>
+  <p style="text-align: left;">In this screen you will a list of all the entered date-weight pairs (if appropriate fat-, water- and muscle-percentage are displayed too). The entries are displayed sorted by date. At the top, the number of visible entries can be set. A long press opens a menu to an entry:</p>
+  <ul>
+   <li>
+    <b>New:</b>
+    Opens &#34;Enter your weight&#34; Screen.
+   </li>
+   <li>
+    <b>Edit:</b>
+    Opens &#34;Enter your weight&#34; Screen, This allows you to change the weight (and if appropriate fat-, water- and muscle-percentage too) for the selected date.
+   </li>
+   <li>
+    <b>Delete:</b>
+    Deletes the current weight entry.
+   </li>
+  </ul>
+  <br/>
+  On the menu of this screen, you have the ability to import and export data. Exported data will be saved as a file &#34;BMI_SPITZEL.csv&#34; created on your sd-card. This file is located after the successful export in the main directory of your sd-card. When you want to import the data into the program, there musst be the file named &#34;BMI_SPITZEL.csv&#34; available at the (root) directory of the sd-card. Only if this file exists can data be imported.
+  <br/>
+  You can transfer data to a new phone. Normally it is enough if you export the data on your old phone and then insert the sd-card into the new phone and import the data.
+  <p></p>
+  <br/>
+  <h3>Function: View graph</h3>
+  <p style="text-align: left;">In this screen you will see a graph of your weight trend (if appropriate fat-, water- and muscle-percentage are displayed). Currently only the course of the past week, month or quarter will be displayed. To see the next graph, tap the display or use the context-menu.</p>
+ </body>
+</html>

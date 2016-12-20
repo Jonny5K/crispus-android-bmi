@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- App-Name -->
+	<string name="app_name">BMI-Spitzel</string>
+	<!-- Beschriftungen für die Hauptseite -->
+	<string name="buttonGewichtEingeben">Gewicht speichern</string>
+	<string name="buttonGewichtBearbeiten">Gewicht an Datum bearbeiten</string>
+	<string name="buttonGraphAnzeigen">Graph anzeigen</string>
+	<string name="buttonBmiBerechnen">BMI-Berechnung</string>
+	<string name="buttonEinstellungen">Einstellungen</string>
+	<string name="startseiteIntro">Bitte wählen Sie eine der folgenden Optionen aus:</string>
+
+	<!-- Einträge für Menüs -->
+	<string name="menueEinstellungen">Einstellungen</string>
+	<string name="menueHilfe">Hilfe</string>
+	<string name="menueInfo">Info</string>
+	<string name="menueBeenden">Beenden</string>
+	<string name="menueNeu">Neu</string>
+	<string name="menueZurueck">Zurück</string>
+	<string name="menueEMailAnEntwickler">E-Mail an den Entwickler</string>
+	<string name="menueNaechsterGraph">Nächster Graph</string>
+	
+	<!-- Einträge für Context-Menüs -->
+	<string name="contextNeu">Neu</string>
+	<string name="contextBearbeiten">Bearbeiten</string>
+	<string name="contextLoeschen">Löschen</string>
+	<string name="contextHeaderTitel">Bitte wählen Sie...</string>
+	
+	<!-- Einträge für Preferences -->
+	<string name="preferenceDefaultSummary">Bitte eingeben...</string>
+	<string name="preferenceGroesseTitle">Körpergröße</string>
+	<string name="preferenceGroesse">Ihre Körpergröße</string>
+	<string name="preferenceGroesseSummary">Bitte geben Sie Ihre Körpergröße in cm ein (z.B. 186).</string>
+	<string name="preferenceGeschlecht">Geschlecht</string>
+	<string name="preferenceGeschlecht_prompt">Bitte wählen Sie Ihr Geschlecht.</string>
+	<string name="preferenceAlter">Alter</string>
+	<string name="preferenceGeburtstag">Geburtsdatum</string>
+	<string name="preferenceSpracheEinheitensystem">Sprache / Einheitensystem</string>
+	<string name="preferenceSprache">Sprache</string>
+	<string name="preferenceSprache_prompt">Bitte wählen Sie Ihre Sprache.</string>
+	<string name="preferenceEinheitensystem">Einheitensystem</string>
+	<string name="preferenceEinheitensystem_prompt">Bitte wählen Sie Ihr Einheitensystem.</string>
+	<string name="preferenceZeitauswahl">Zeitauswahl</string>
+	<string name="preferenceZeitraum">Zeitraum</string>
+	<string name="preferenceZeitauswahl_prompt">Bitte wählen Sie den Zeitraum, der Ihnen im Graph angezeigt werden soll.</string>
+	<string name="preferenceFettanteil">Fettanteil erfassen</string>
+	<string name="preferenceWasseranteil">Wasseranteil erfassen</string>
+	<string name="preferenceMuskelanteil">Muskelanteil erfassen</string>
+	<string name="preferenceZusatzEingaben">Zusätzliche Eingaben</string>
+	<string name="preferenceSpracheAmputationen">Amputationen</string>
+	<string name="preferenceAmputation">Amputation</string>
+	<string name="preferenceAmputation_prompt">- keine Amputation -</string>
+	<string name="preferenceWeitereAmputation">Weitere Amputation</string>
+	<string name="preferenceWeitereAmputation_prompt">- keine Amputation -</string>
+	
+	<!-- Einträge für die Gewicht eingeben Seiten -->
+	<string name="gewichtEingeben">Gewicht eingeben</string>
+	<string name="gewichtEingebenInfo">Bitte geben Sie zu dem ausgewählten Datum Ihr Gewicht ein. Anhand dieser Daten wird Ihr BMI berechnet.</string>
+	<string name="buttonGewichtHinzufuegen">Gewicht hinzufügen (BMI berechnen)</string>
+	<string name="gewichtEingabeDatum">Datum</string>
+	<string name="gewichtEingabeGewicht">Gewicht in Kilogramm</string>
+	<string name="gewichtEingabeFettanteil">Fettanteil</string>
+	<string name="gewichtEingabeWasseranteil">Wasseranteil</string>
+	<string name="gewichtEingabeMuskelanteil">Muskelanteil</string>
+	
+	
+	<string name="buttonZurueck">Zurück</string>
+	<string name="gewichtEingabeBmi">Ihr Body-Maß-Index (BMI)</string>
+	
+	<!-- Einträge für die Seite BMI-Berechnung -->
+	<string name="bmiBerechnen">BMI (Body-Maß-Index)</string>
+	<string name="bmiBerechnenInfo">Bitte geben Sie zu dem ausgewählten Datum Ihr Gewicht ein. Anhand dieser Daten wird Ihr BMI berechnet.</string>
+	<string name="bmiBerechnenHinzufuegen">Gewicht hinzufügen (BMI berechnen)</string>
+	<string name="bmiBerechnenAlter">Alter</string>
+	<string name="bmiBerechnenGewicht">Gewicht (kg)</string>
+	<string name="bmiBerechnenGroesse">Größe (cm)</string>
+	<string name="bmiBerechnenHint">Ihr Body-Maß-Index (BMI)</string>
+	<string name="bmiBerechnenWeiblich">Weiblich</string>
+	<string name="bmiBerechnenMaennlich">Männlich</string>
+	<string name="bmiBerechnenInfoTabelle">Informationstabelle</string>
+	<string name="bmiBerechnenInfoUntergewicht">Untergewicht</string>
+	<string name="bmiBerechnenInfoNormal">Normalgewicht</string>
+	<string name="bmiBerechnenInfoUebergewicht">Übergewicht</string>
+	<string name="bmiBerechnenInfoAdipositas">Adipositas</string>
+	<string name="bmiBerechnenInfoStarkAdipositas">starke Adipositas</string>
+	
+	<!-- Einträge für die Gewicht bearbeiten Seiten -->
+	<string name="gewichtBearbeiten">Gewicht bearbeiten</string>
+	<string name="gewichtBearbeitenListeLeer">Es wurde bisher noch keine Daten eingegeben.</string>
+	<string name="sortierung_prompt">Sortierung wählen...</string>
+	<string name="gewichtBearbeitenHinweisKeineSchreibrechteSDCard">Auf die SD-Karte kann nicht geschrieben werden. Bitte überprüfen Sie ob die SD-Karte richtig installiert ist.</string>
+	<string name="gewichtBearbeitenHinweisKeineLeserechteSDCard">Von der SD-Karte kann nicht gelesen werden. Bitte überprüfen Sie ob die SD-Karte richtig installiert ist.</string>
+	<string name="gewichtBearbeitenHinweisNichtGemountetSDCard">Bitte überprüfen Sie ob die SD-Karte richtig installiert ist.</string>
+	<string name="gewichtBearbeitenHinweisDatenErfolgreichExportiertSDCard">Der Export der Gewichtsdaten war erfolgreich. Die Daten liegen auf der SD-Karte unter: </string>
+	<string name="gewichtBearbeitenHinweisDatenNichtErfolgreichExportiertSDCard">Die Daten konnte nicht erfolgreich exportiert werden.</string>
+	<string name="gewichtBearbeitenHinweisDatenErfolgreichImportiertSDCard">Der Import der Gewichtsdaten war erfolgreich. Die Daten wurden gelesen von der SD-Karte unter: </string>
+	<string name="gewichtBearbeitenHinweisDatenNichtErfolgreichImportiertSDCard">Die Daten konnte nicht erfolgreich importiert werden.</string>
+	<string name="gewichtBearbeitenActivityOverride">Sie haben bereits Daten eingegeben. Diese Daten werden vor dem Import alle gelöscht und nur die neuen Daten werden nach dem Import vorhanden sein. Wollen Sie mit dem Import fortfahren?</string>
+	<string name="gewichtBearbeitenHinweisImportiertKeineDatei">Die Datei zum Importieren wurde nicht gefunden. Die Datei muss auf Ihrer SD-Karte im obersten Verzeichnis liegen.</string>
+	<string name="gewichtBearbeitenHinweisExportierenDateiVorhanden">Es existiert bereits eine Datei mit Daten, möchten Sie diese überschreiben?</string>
+	<string name="gewichtBearbeitenBitteWaehlen">Bitte wählen</string>
+	<string name="gewichtBearbeitenFilter10">Die letzten 10 Einträge anzeigen.</string>
+	<string name="gewichtBearbeitenFilter25">Die letzten 25 Einträge anzeigen.</string>
+	<string name="gewichtBearbeitenFilter50">Die letzten 50 Einträge anzeigen.</string>
+	<string name="gewichtBearbeitenFilterAlle">Alle Einträge anzeigen.</string>
+	
+	<!-- Einträge die aus Java-Klassen geladen werden -->
+	<string name="emailSubject">Hinweis zum Crispus BMI-Spitzel</string>
+	<string name="emailText">Sehr geehrter Herr Kraus,</string>
+	<string name="ihrBMI">Ihr BMI</string>
+	<string name="bmiBerechnenActivityHinweisEingabenFehlen">Sie habe noch nicht alle Einstellungen vorgenommen. Bitte beachten Sie, dass für die Berechnung des BMI das Alter, Geschlecht, Gewicht und die Körpergröße benötigt werden.</string>
+	<string name="bmiBerechnenActivityHinweisAlterUngueltig">Das Alter hat einen ungültigen Wert. Bitte geben Sie eine Zahl zwischen 18 und 150 Jahren ein.</string>
+	<string name="bmiBerechnenActivityHinweisGroesseUngueltig">Die Größe hat einen ungültigen Wert. Bitte geben Sie eine Zahl zwischen 20cm und 300cm ein.</string>
+	<string name="bmiBerechnenActivityHinweisGewichtUngueltig">Das Gewicht hat einen ungültigen Wert. Bitte geben Sie eine Zahl zwischen 3kg und 450kg ein.</string>
+	<string name="bmiSpitzelActivityInfoUeberDialog">Info zu Crispus\u00ae BMI-Spitzel</string>
+	<string name="bmiSpitzelActivityInfoUeberDialogName">Body Maß Index (BMI)-Spitzel</string>
+	<string name="bmiSpitzelActivityInfoUeberDialogVersion">Version</string>
+	<string name="bmiSpitzelActivityInfoUeberDialogCopyright">Copyright\u00a9 2012 Johannes Kraus. Alle Rechte vorbehalten.</string>
+	<string name="gewichtBearbeitenActivityTitel">Gewicht bearbeiten</string>
+	<string name="gewichtBearbeitenActivityBitte">Bitte drücken Sie lange auf einen Eintrag, um das Kontextmenü aufzurufen.</string>
+	<string name="gewichtEingebenActivityEingabefelderFehler">Sie haben nicht alle Eingabefelder gefüllt.</string>
+	<string name="gewichtEingebenActivityOverride">Für das angegebenen Datum existiert bereits ein Eintrag. Soll dieser überschrieben werden?</string>
+	<string name="gewichtEingebenActivityPositiveButton">Ja</string>
+	<string name="gewichtEingebenActivityNegativButton">Nein</string>
+	<string name="gewichtEingebenActivityGewichtFehler">Das eingegebene Gewicht entspricht keinem realem Gewicht. Der Wert muss zwischen 1Kg und 400Kg liegen.</string>
+	<string name="gewichtEingebenActivityPreferencesFehler">Sie habe noch nicht alle Einstellungen vorgenommen. Bitte beachten Sie, dass für die Berechnung des BMI das Alter, Geschlecht und die Körpergröße benötigt werden.</string>
+	<string name="gewichtEingebenActivitySelectedDate">Das ausgewählte Datum lautet</string>
+	<string name="bMIRechnerAngabenUnvollstaendig">Angaben sind unvollständig (siehe Einstellungen).</string>
+	<string name="datumGewichtsAdapterDate">Datum</string>
+	<string name="datumGewichtsAdapterGewicht">Gewicht</string>
+	<string name="datumGewichtsAdapterIhrBMI">Ihr BMI</string>
+	<string name="datumGewichtsAdapterIhrberechneterBMI">Ihr berechneter BMI</string>
+	
+	<string name="pfundKurztext">lb</string>
+	<string name="inchKurztext">\"</string>
+	<string name="pfundText">Pfund</string>
+	<string name="inchText">Zoll</string>
+	<string name="cmText">cm</string>
+	<string name="kilogrammKurztext">kg</string>
+	<string name="kilogrammtext">Kilogramm</string>
+	
+	<string name="fettanteil">Fettanteil</string>
+	<string name="wasseranteil">Wasseranteil</string>
+	<string name="muskelanteil">Muskelanteil</string>
+</resources>

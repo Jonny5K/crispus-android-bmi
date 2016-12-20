@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- App-Name -->
+	<string name="app_name">BMI-Spy</string>
+	<!-- Beschriftungen für die Hauptseite -->
+	<string name="buttonGewichtEingeben">Enter your weight</string>
+	<string name="buttonGewichtBearbeiten">Weight progress to date</string>
+	<string name="buttonGraphAnzeigen">View graph</string>
+	<string name="buttonBmiBerechnen">Calculate your BMI</string>
+	<string name="buttonEinstellungen">Settings</string>
+	<string name="startseiteIntro">Please choose an option:</string>
+
+	<!-- Einträge für Menüs -->
+	<string name="menueEinstellungen">Settings</string>
+	<string name="menueHilfe">Help</string>
+	<string name="menueInfo">Info</string>
+	<string name="menueBeenden">Close</string>
+	<string name="menueNeu">New</string>
+	<string name="menueZurueck">Back</string>
+	<string name="menueEMailAnEntwickler">E-mail the developers</string>
+	<string name="menueImport">Import</string>
+	<string name="menueExport">Export</string>
+	<string name="menueNaechsterGraph">Next graph</string>
+	
+	
+	<!-- Einträge für Context-Menüs -->
+	<string name="contextNeu">New</string>
+	<string name="contextBearbeiten">Edit</string>
+	<string name="contextLoeschen">Delete</string>
+	<string name="contextHeaderTitel">Please select...</string>
+	
+	<!-- Einträge für Preferences -->
+	<string name="preferenceDefaultSummary">Please enter...</string>
+	<string name="preferenceGroesseTitle">Body shape details</string>
+	<string name="preferenceGroesse">Your Height</string>
+	<string name="preferenceGroesseSummary">Please enter your height in cm (eg 186).</string>
+	<string name="preferenceGeschlecht">Gender</string>
+	<string name="preferenceGeschlecht_prompt">Please select your gender.</string>
+	<string name="preferenceAlter">Age</string>
+	<string name="preferenceGeburtstag">Date of birth</string>
+	<string name="preferenceSpracheEinheitensystem">Language / System of units</string>
+	<string name="preferenceSprache">Language</string>
+	<string name="preferenceSprache_prompt">Please choose your language.</string>
+	<string name="preferenceEinheitensystem">System of Units</string>
+	<string name="preferenceEinheitensystem_prompt">Please choose your system of Units.</string>
+	<string name="preferenceZeitauswahl">Time selection</string>
+	<string name="preferenceZeitraum">Date range for graphs</string>
+	<string name="preferenceZeitauswahl_prompt">Please select the time period have your results graphed for (eg. \'One Week\' or \'One Month\').</string>
+	<string name="preferenceFettanteil">Capture body-fat %</string>
+	<string name="preferenceWasseranteil">Capture body-water %</string>
+	<string name="preferenceMuskelanteil">Capture body-muscle %</string>
+	<string name="preferenceZusatzEingaben">Optional inputs</string>
+	<string name="preferenceSpracheAmputationen">Amputations</string>
+	<string name="preferenceAmputation">Amputation</string>
+	<string name="preferenceAmputation_prompt">- no amputation -</string>
+	<string name="preferenceWeitereAmputation">Other amputation</string>
+	<string name="preferenceWeitereAmputation_prompt">- no amputation -</string>
+	
+	<!-- Einträge für die Gewicht eingeben Seiten -->
+	<string name="gewichtEingeben">Enter your weight</string>
+	<string name="gewichtEingebenInfo">Please enter a date your weight was taken and the weight measured. These will be used to calculate your BMI.</string>
+	<string name="buttonGewichtHinzufuegen">Add weight (calculates BMI)</string>
+	<string name="gewichtEingabeDatum">Date</string>
+	<string name="gewichtEingabeGewicht">Weight in kilogram</string>
+	<string name="gewichtEingabeFettanteil">Fat percentage</string>
+	<string name="gewichtEingabeWasseranteil">Water percentage</string>
+	<string name="gewichtEingabeMuskelanteil">Muscle percentage</string>
+	<string name="buttonZurueck">Back</string>
+	<string name="gewichtEingabeBmi">Your Body-Maß-Index (BMI)</string>
+	
+	<!-- Einträge für die Seite BMI-Berechnung -->
+	<string name="bmiBerechnen">BMI (Body-Maß-Index)</string>
+	<string name="bmiBerechnenInfo">Please enter a date your weight was taken and the weight measured. These will be used to calculate your BMI.</string>
+	<string name="bmiBerechnenHinzufuegen">Add weight (calculates BMI)</string>
+	<string name="bmiBerechnenAlter">Age</string>
+	<string name="bmiBerechnenGewicht">Weight (kg)</string>
+	<string name="bmiBerechnenGroesse">Height (cm)</string>
+	<string name="bmiBerechnenHint">Your Body-Maß-Index (BMI)</string>
+	<string name="bmiBerechnenWeiblich">female</string>
+	<string name="bmiBerechnenMaennlich">male</string>
+	<string name="bmiBerechnenInfoTabelle">Information table</string>
+	<string name="bmiBerechnenInfoUntergewicht">underweight</string>
+	<string name="bmiBerechnenInfoNormal">normal weight</string>
+	<string name="bmiBerechnenInfoUebergewicht">overweight</string>
+	<string name="bmiBerechnenInfoAdipositas">obesity</string>
+	<string name="bmiBerechnenInfoStarkAdipositas">severe obesity</string>
+	
+	<!-- Einträge für die Gewicht bearbeiten Seiten -->
+	<string name="gewichtBearbeiten">Edit weight</string>
+	<string name="gewichtBearbeitenListeLeer">There was no data entered so far.</string>
+	<string name="sortierung_prompt">Choose change order...</string>
+	<string name="gewichtBearbeitenHinweisKeineSchreibrechteSDCard">Couldn\'t write to the sd-card. Please check that the sd-card is installed correctly.</string>
+	<string name="gewichtBearbeitenHinweisKeineLeserechteSDCard">Couldn\'t read from the sd-card. Please check that the sd-card is installed correctly.</string>
+	<string name="gewichtBearbeitenHinweisNichtGemountetSDCard">Please check that the sd-card is installed correctly.</string>
+	<string name="gewichtBearbeitenHinweisDatenErfolgreichExportiertSDCard">The export of the weight data was successful. The data is stored on the sd-card under: </string>
+	<string name="gewichtBearbeitenHinweisDatenNichtErfolgreichExportiertSDCard">The data could not be successfully exported.</string>
+	<string name="gewichtBearbeitenHinweisDatenErfolgreichImportiertSDCard">The import of the weight data was successful. The data has been read from the sd-card under: </string>
+	<string name="gewichtBearbeitenHinweisDatenNichtErfolgreichImportiertSDCard">The data could not be successfully imported.</string>
+	<string name="gewichtBearbeitenActivityOverride">You have already data stored in this program. Existing data will be deleted before importing new data. Only the new data will be available after the import. Do you want to proceed with the import?</string>
+	<string name="gewichtBearbeitenHinweisImportiertKeineDatei">The file for the import was not found. The file must be on your sd-card in the base directory.</string>
+	<string name="gewichtBearbeitenHinweisExportierenDateiVorhanden">There already exists a file with data, do you want to overwrite this file?</string>
+	<string name="gewichtBearbeitenBitteWaehlen">Please select</string>
+	<string name="gewichtBearbeitenFilter10">Show the last 10 entries.</string>
+	<string name="gewichtBearbeitenFilter25">Show the last 25 entries.</string>
+	<string name="gewichtBearbeitenFilter50">Show the last 50 entries.</string>
+	<string name="gewichtBearbeitenFilterAlle">Show all entries.</string>
+	
+	<!-- Einträge die aus Java-Klassen geladen werden -->
+	<string name="emailSubject">Notes to Crispus BMI-Spy</string>
+	<string name="emailText">Dear Mr. Kraus,</string>
+	<string name="ihrBMI">Your BMI</string>
+	<string name="bmiBerechnenActivityHinweisEingabenFehlen">You have not completed all the settings. Please note that the following are needed for the calculation of BMI: age, gender, weight and height.</string>
+	<string name="bmiBerechnenActivityHinweisAlterUngueltig">Age has an invalid value. Please enter a number between 18 and 150 years.</string>
+	<string name="bmiBerechnenActivityHinweisGroesseUngueltig">Size has an invalid value. Please enter a number between 20cm and 300cm.</string>
+	<string name="bmiBerechnenActivityHinweisGewichtUngueltig">The weight has an invalid value. Please enter a number between 3 kg and 450 kg. Enter a number only withought the "kg" for example 95.2</string>
+	<string name="bmiSpitzelActivityInfoUeberDialog">Info about Crispus\u00ae BMI-Spy</string>
+	<string name="bmiSpitzelActivityInfoUeberDialogName">Body Maß Index (BMI)-Spy</string>
+	<string name="bmiSpitzelActivityInfoUeberDialogVersion">Version</string>
+	<string name="bmiSpitzelActivityInfoUeberDialogCopyright">Copyright\u00a9 2012 Johannes Kraus. All rights reserved.</string>
+	<string name="gewichtBearbeitenActivityTitel">Edit Weight</string>
+	<string name="gewichtBearbeitenActivityBitte">Please long press on an item to bring up a menu of options.</string>
+	<string name="gewichtEingebenActivityEingabefelderFehler">You have not completed all input fields.</string>
+	<string name="gewichtEingebenActivityOverride">For the specified date there is already an entry. Should this be overridden?</string>
+	<string name="gewichtEingebenActivityPositiveButton">yes</string>
+	<string name="gewichtEingebenActivityNegativButton">no</string>
+	<string name="gewichtEingebenActivityGewichtFehler">The weight entered does not match any real weight. The value must be between 1kg and 400kg.</string>
+	<string name="gewichtEingebenActivityPreferencesFehler">You have not completed all the settings. Please note that the calculation of the BMI needs age, gender and height.</string>
+	<string name="gewichtEingebenActivitySelectedDate">The selected date is</string>
+	<string name="bMIRechnerAngabenUnvollstaendig">Information is incomplete (see Settings).</string>
+	<string name="datumGewichtsAdapterDate">Date</string>
+	<string name="datumGewichtsAdapterGewicht">Weight</string>
+	<string name="datumGewichtsAdapterIhrBMI">Your BMI</string>
+	<string name="datumGewichtsAdapterIhrberechneterBMI">Your calculated BMI</string>
+	
+	<string name="pfundKurztext">lbs</string>
+	<string name="inchKurztext">\"</string>
+	<string name="pfundText">pounds</string>
+	<string name="inchText">inch</string>
+	<string name="cmText">cm</string>
+	<string name="kilogrammKurztext">kg</string>
+	<string name="kilogrammtext">kilogram</string>
+	
+	<string name="fettanteil">Fat percentage</string>
+	<string name="wasseranteil">Water percentage</string>
+	<string name="muskelanteil">Muscle percentage</string>
+</resources>

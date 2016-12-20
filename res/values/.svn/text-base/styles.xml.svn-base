@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="Inhaltselement">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginTop">5dp</item>
+		<item name="android:layout_marginBottom">5dp</item>
+		<item name="android:layout_marginLeft">15dp</item>
+		<item name="android:layout_marginRight">15dp</item>
+	</style>
+	
+	<style name="SchaltflaechenText">
+		<item name="android:paddingTop">20dp</item>
+		<item name="android:textSize">18sp</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+	
+	<style name="SchaltflaecheBack">
+		<item name="android:layout_width">90dp</item>
+		<item name="android:layout_height">34dip</item>
+		<item name="android:background">@drawable/button_back</item>
+		<item name="android:textColor">@color/textfarbe_schrift</item>
+	</style>
+	
+	<style name="Schaltflaeche" parent="@style/Inhaltselement">
+		<item name="android:background">@drawable/button</item>
+	</style>
+	
+	<style name="EditTextStyle" parent="@style/Inhaltselement">
+	</style>
+	
+	<!-- Style für normalen Text, der "viel" Information beinhaltet. -->
+	<style name="TextStyleNormal" parent="@style/Inhaltselement">
+		<item name="android:textSize">15sp</item>
+		<item name="android:textColor">@color/textfarbe</item>
+		<item name="android:layout_marginTop">0dp</item>
+	</style>
+	
+	<!-- Style für Labels von Eingabefeldern (Beschriftung). -->
+	<style name="TextStyleLabel" parent="@style/Inhaltselement">
+		<item name="android:paddingTop">10dp</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:textColor">@color/textfarbe</item>
+		<item name="android:layout_marginTop">0dp</item>
+		<item name="android:layout_marginBottom">0dp</item>
+	</style>
+	
+	<!-- Style für Labels von Eingabefeldern-Fortsetzung(Beschriftung). -->
+	<style name="TextStyleLabelAnteil" parent="@style/TextStyleLabel">
+		<item name="android:paddingTop">0dp</item>
+	</style>
+	
+	
+	
+	<!-- Style für Labels die FETT geschrieben werden sollen (Beschriftung). -->
+	<style name="TextStyleLabelBold" parent="@style/TextStyleLabel">
+		<item name="android:textStyle">bold</item>
+	</style>
+	
+	<!-- Style für kurze Überschriften. -->
+	<style name="TextStyleUeberschrift" parent="@style/TextStyleNormal">
+		<item name="android:textSize">20sp</item>
+		<item name="android:gravity">center</item>
+		<item name="android:paddingTop">10dp</item>
+		<item name="android:paddingBottom">10dp</item>
+	</style>
+	
+	<!-- Style für eine Separator. -->
+	<style name="StyleSeparator" parent="@style/TextStyleNormal">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:scaleType">fitXY</item>
+		<item name="android:paddingLeft">5dp</item>
+		<item name="android:paddingRight">5dp</item>
+		<item name="android:paddingBottom">3dp</item>
+		<item name="android:paddingTop">2dp</item>
+		<item name="android:src">@android:drawable/divider_horizontal_dark</item>
+	</style>
+	
+	<!-- Style für eine Separator, der nicht über die ganze Seite geht. -->
+	<style name="StyleSeparatorSmall" parent="@style/StyleSeparator">
+		<item name="android:paddingLeft">15dp</item>
+		<item name="android:paddingRight">15dp</item>
+	</style>
+	
+	
+	<style name="PreferencesTheme">
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowTitleSize">40dip</item>
+		<item name="android:windowTitleBackgroundStyle">@style/TitlebarBackgroundStyle</item>
+	    <item name="android:windowBackground">@drawable/background</item>
+	</style>
+
+	<style name="BMISpitzelTheme" parent="@android:style/Theme.Black">
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowTitleSize">40dip</item>
+		<item name="android:windowTitleBackgroundStyle">@style/TitlebarBackgroundStyle</item>
+	</style>
+
+	
+	 <style name="TitlebarBackgroundStyle">
+        <item name="android:background">@drawable/header</item>
+    </style>
+</resources>

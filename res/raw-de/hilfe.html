@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Crispus.eu BMI-Spitzel</title>
+	<style>
+		html, body, h1, h2, h3, h4, p, span, div, li, ul {color: white;}
+	</style>
+</head>
+	<body>
+	<h3>Hilfe zum BMI-Spitzel</h3>
+	<p style="text-align:left;">
+		Programm um sein Gewicht zu Dokumentieren. Es kann pro Tag ein Gewicht (Angabe in Kilogramm und Pfund) eingegeben werden. 
+		Mit Hilfe des Gewichts und der Angaben des Geburtstags, der Gr&ouml;&szlig;e und des Geschlechts wird der Body-Ma&szlig;-Index (BMI) berechnet.
+		Das Gewicht kann f&uuml;r die letzten 7 Tage, den letzten Monat oder das letzte Quartal, in einem Graphen angezeigt werden. Da der Body-Ma&szlig;-Index proportional zu dem Gewicht verl&auml;uft, 
+		kann der Graph auch als Verlauf des BMI gesehen werden. 
+	</p>
+	<br />
+	<h3>Funktionen Einstellungen</h3>
+	<p style="text-align:left;">
+		In den Einstellungen k&ouml;nnen Sie die folgenden Daten eingeben:
+		<ul>
+			<li><b>K&ouml;rpergr&ouml;&szlig;e:</b> Pflichtangabe wird zur Berechnung des BMI ben&ouml;tigt.</li>
+			<li><b>Geschlecht:</b> Pflichtangabe wird zur Berechnung des BMI ben&ouml;tigt.</li>
+			<li><b>Geburtsangabe:</b> Pflichtangabe wird zur Berechnung des BMI ben&ouml;tigt.</li>
+			<li><b>Sprache:</b> Auswahl der Sprache (englisch oder deutsch).</li>
+			<li><b>Einheitensystem:</b> Auswahl des Einheitensystems (metrisch oder imperial).</li>
+			<li><b>Zeitraum:</b> Pflichtangabe, gibt an wie viele Tage in dem Graphen angezeigt werden sollen.</li>
+			<li><b>Zus&auml;tzliche Eingaben:</b> Hier kann ausgew&auml;hlt werden, ob zus&auml;tzlich zum Gewicht noch der Fett-, Wasser- und Muskelanteil erfasst werden soll. Diese angaben sind nicht zwingend notwendig!</li>
+			<li><b>Amputationen:</b> Hier kann ausgew&auml;hlt werden, ob Sie Amputation haben. Wenn Sie Amputationen haben, dann wird Ihr BMI-Wert entsprechend der gew&auml;hlten Amputation mit einem Korrekturwerte berechnet.</li>
+		</ul>
+	</p>
+	
+	<br />
+	<h3>Funktionen: BMI-Berechnen</h3>
+	<p style="text-align:left;">
+		In der Bildschirmmaske "BMI-Berechnung" k&ouml;nnen Sie die folgenden Daten eingeben:
+		<ul>
+			<li><b>Gewicht:</b> Die eigentliche Gewichtsangabe</li>
+			<li><b>Alter:</b> Angabe erfolgt in Jahren.</li>
+			<li><b>Gr&ouml;&szlig;e:</b> Die Angabe erfolgt in cm.</li>
+			<li><b>Geschlecht:</b> Angabe Ihres Geschlecht.</li>
+		</ul>
+		Mit den angegeben Daten wird der BMI-Wert berechnet und daraufhin eine Informationstabelle angezeigt. Anhand der Farbe k&ouml;nnen Sie sehen, in welchem Bereich Ihr BMI-Wert liegt.
+	</p>
+	
+	<br />
+	<h3>Funktionen: Gewicht speichern</h3>
+	<p style="text-align:left;">
+		In der Bildschirmmaske "Gewicht speichern" k&ouml;nnen Sie die folgenden Daten eingeben:
+		<ul>
+			<li><b>Datum:</b> Angabe von welchem Datum die Gewichtsangabe ist.</li>
+			<li><b>Gewicht:</b> Die eigentliche Gewichtsangabe</li>
+			<li><b>Fettanteil:</b>Wird in Prozent eingegeben (optional). Muss erst in den Einstellungen aktiviert werden.</li>
+			<li><b>Wasseranteil:</b>Wird in Prozent eingegeben (optional). Muss erst in den Einstellungen aktiviert werden.</li>
+			<li><b>Muskelanteil:</b>Wird in Prozent eingegeben (optional). Muss erst in den Einstellungen aktiviert werden.</li>
+		</ul>
+		Pro Datum kann genau ein Gewichtswert hinterlegt werden. Ein bestehender Gewichtswert kann bei Angabe des gleichen Datums &uuml;berschrieben werden.
+		<br />
+		Nach dem Hinzuf&uuml;gen eines Gewichtswert, wird der aktuelle BMI berechnet.
+	</p>
+	
+	<br />
+	<h3>Funktionen: Gewicht bearbeiten</h3>
+	<p style="text-align:left;">
+		In dieser Bildschirmmaske wird Ihnen alle eingegebenen Gewichts-Datum-Paare aufgelistet (gegebenenfalls werden auch Fett-, Wasser- und Muskelanteil angezeigt). Die Eintr&auml;ge werden nach Datum sortiert ausgegeben.
+		&Uuml;ber die obere Auswahlbox kann die Anzahl der Sichtbaren Eintr&auml;ge eingestellt werden.<br />
+		Durch langes bet&auml;tigen eines Eintrags &ouml;ffnet sich ein Kontext-Men&uuml;:
+		<ul>
+			<li><b>Neu:</b> &Ouml;ffnet die Bildschirmmaske "Gewicht eingeben".</li>
+			<li><b>Bearbeiten:</b> &Ouml;ffnet die Bildschirmmaske "Gewicht eingeben", dabei ist das aktuelle Datum fest eingetragen.</li>
+			<li><b>L&ouml;schen:</b> L&ouml;scht den aktuellen Eintrag.</li>
+		</ul>
+		<br />
+		&Uuml;ber das Men&uuml; in dieser Bildschirmmaske haben Sie die M&ouml;glichkeit die Daten zu importieren und exportieren. Es wird eine Datei "BMI_SPITZEL.csv" 
+		auf Ihrer SD-Karte angelegt. Diese Datei liegt nach dem erfolgreichen Export im Hauptverzeichnis Ihrer SD-Karte. Beim Import der Daten wird in 
+		diesem (Haupt-) Verzeichnis der SD-Karte geschaut, ob eine Datei mit dem Namen "BMI_SPITZEL.csv" vorhanden ist. Nur wenn diese Datei existiert, 
+		werden Daten importiert. <br />
+		Sie selbst sind daf&uuml;r Verantwortlich, dass die Daten ihren Weg auf ein neues Handy finden. Im Normalfall reicht es, wenn Sie auf ihrem alten Handy
+		die Daten exportieren und im Anschluss die SD-Karte in das neue Handy einlegen. 
+	</p>
+	
+	<br />
+	<h3>Funktionen: Graph anzeigen</h3>
+	<p style="text-align:left;">
+		In dieser Bildschirmmaske wird Ihnen ein Graph &uuml;ber Ihren Gewichtsverlauf angezeigt (gegebenenfalls werden auch Fett-, Wasser- und Muskelanteil angezeigt). Aktuell wird nur der Verlauf der letzten Woche, Monat oder Quartal angezeigt.
+		Um einen weiteren Graphen anzuschauen, m&uuml;ssen Sie in den Graphen tippen.
+	</p>
+	</body>
+</html>

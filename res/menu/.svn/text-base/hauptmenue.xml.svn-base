@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item 
+		android:id="@+id/menueEMailAnEntwickler"
+		android:title="@string/menueEMailAnEntwickler"
+		android:icon="@android:drawable/ic_dialog_email" 
+	/>  
+	<item 
+		android:id="@+id/menueEinstellungen"
+		android:title="@string/menueEinstellungen"
+		android:icon="@android:drawable/ic_menu_preferences" 
+	/>
+	<item 
+		android:id="@+id/menueHilfe"
+		android:title="@string/menueHilfe"
+		android:icon="@android:drawable/ic_menu_help" 
+	/>
+	<item 
+		android:id="@+id/menueInfo"
+		android:title="@string/menueInfo"
+		android:icon="@android:drawable/ic_menu_info_details" 
+	/>    
+	<item 
+		android:id="@+id/menueBeenden"
+		android:title="@string/menueBeenden"
+		android:icon="@android:drawable/ic_menu_close_clear_cancel" 
+	/>  
+</menu>

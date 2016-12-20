@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen 
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory
+		android:title="@string/preferenceGroesseTitle">
+		<EditTextPreference 
+			android:key="groesse"
+			android:id="@+id/preferenceGroesse"
+			android:title="@string/preferenceGroesse"
+			android:summary="@string/preferenceGroesseSummary"
+			android:defaultValue=""
+			android:digits="0123456789"
+			android:inputType="phone"
+		/>
+	</PreferenceCategory>	
+	
+	<PreferenceCategory
+		android:title="@string/preferenceGeschlecht">
+		<ListPreference
+		  android:title="@string/preferenceGeschlecht"
+		  android:summary="@string/preferenceGeschlecht_prompt"
+		  android:key="geschlecht"
+		  android:entries="@array/listDisplayGeschlecht"
+		  android:entryValues="@array/listReturnValueGeschlecht" />
+	</PreferenceCategory>
+	
+	<PreferenceCategory
+		android:title="@string/preferenceAlter">
+		 <org.bostonandroid.datepreference.DatePreference
+     		android:key="geburtstag" 
+     		android:title="@string/preferenceGeburtstag"
+     		android:defaultValue="1991.01.01" />
+	</PreferenceCategory>	
+	
+	<PreferenceCategory
+		android:title="@string/preferenceSpracheEinheitensystem">
+		<ListPreference
+		  android:title="@string/preferenceSprache"
+		  android:summary="@string/preferenceSprache_prompt"
+		  android:key="sprache"
+		  android:entries="@array/listDisplaySprache"
+		  android:entryValues="@array/listReturnValueSprache" />
+		<ListPreference
+		  android:title="@string/preferenceEinheitensystem"
+		  android:summary="@string/preferenceEinheitensystem_prompt"
+		  android:key="einheitensystem"
+		  android:entries="@array/listDisplayEinheitensystem"
+		  android:entryValues="@array/listReturnValueEinheitensystem" />  
+	</PreferenceCategory>	
+	
+	<PreferenceCategory
+		android:title="@string/preferenceZeitauswahl">
+		<ListPreference
+		  android:title="@string/preferenceZeitraum"
+		  android:summary="@string/preferenceZeitauswahl_prompt"
+		  android:key="zeitauswahl"
+		  android:entries="@array/listDisplayZeitauswahl"
+		  android:entryValues="@array/listReturnValueZeitauswahl" 
+		  android:defaultValue="7"
+		  />
+	</PreferenceCategory>
+	
+	<PreferenceCategory
+		android:title="@string/preferenceZusatzEingaben">
+		<CheckBoxPreference
+	        android:key="fettanteil"
+	        android:title="@string/preferenceFettanteil"
+	        android:defaultValue="false"
+        />
+        <CheckBoxPreference
+	        android:key="wasseranteil"
+	        android:title="@string/preferenceWasseranteil"
+	        android:defaultValue="false"
+        />
+        <CheckBoxPreference
+	        android:key="muskelanteil"
+	        android:title="@string/preferenceMuskelanteil"
+	        android:defaultValue="false"
+        />
+	</PreferenceCategory>
+	
+	<PreferenceCategory
+		android:title="@string/preferenceAmputation">
+		<ListPreference
+		  android:title="@string/preferenceAmputation"
+		  android:summary="@string/preferenceAmputation_prompt"
+		  android:key="amputation"
+		  android:entries="@array/listDisplayAmputationen"
+		  android:entryValues="@array/listReturnValueAmputationen" />
+		<ListPreference
+		  android:title="@string/preferenceWeitereAmputation"
+		  android:summary="@string/preferenceWeitereAmputation_prompt"
+		  android:key="weitere_amputation"
+		  android:entries="@array/listDisplayAmputationen"
+		  android:entryValues="@array/listReturnValueAmputationen" />  
+	</PreferenceCategory>	
+</PreferenceScreen>
