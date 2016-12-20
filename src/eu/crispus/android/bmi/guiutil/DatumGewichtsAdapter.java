@@ -15,7 +15,7 @@ import eu.crispus.android.bmi.dbutil.DatumGewichtTable;
 import eu.crispus.android.bmi.util.BMIBereich;
 
 /**
- * Adapter um Datum und Gewichts Einträge in einer Liste auszugeben. Auch der Fett-, Wasser- und Museklanteil werden auch über diesen Adapter ausgegeben, werden
+ * Adapter um Datum und Gewichts EintrÃ¤ge in einer Liste auszugeben. Auch der Fett-, Wasser- und Museklanteil werden auch Ã¼ber diesen Adapter ausgegeben, werden
  * aber nur optional angegeben.
  * 
  * @author Johannes Kraus
@@ -24,14 +24,14 @@ import eu.crispus.android.bmi.util.BMIBereich;
 public class DatumGewichtsAdapter extends SimpleCursorAdapter {
 
 	/**
-	 * Tag um die Log's unterscheiden zu können.
+	 * Tag um die Log's unterscheiden zu kÃ¶nnen.
 	 * 
 	 * @see http://developer.android.com/reference/android/util/Log.html
 	 */
 	private static final String TAG = "DatumGewichtsAdapter";
 
 	/**
-	 * Datenbank-Cursor um die Einträge in der Liste ausgeben zu können.
+	 * Datenbank-Cursor um die EintrÃ¤ge in der Liste ausgeben zu kÃ¶nnen.
 	 */
 	private final Cursor cursor;
 
@@ -66,7 +66,7 @@ public class DatumGewichtsAdapter extends SimpleCursorAdapter {
 			TextView textViewGewicht = (TextView) view.findViewById(R.id.gewichttext);
 			TextView textViewBMI = (TextView) view.findViewById(R.id.bmitext);
 
-			// Textviews für die unterschiedlichen optionalen Angaben (Fett-, Wasser- und Muskelanteil).
+			// Textviews fÃ¼r die unterschiedlichen optionalen Angaben (Fett-, Wasser- und Muskelanteil).
 			TextView textViewFettanteil = (TextView) view.findViewById(R.id.textViewFettanteil);
 			TextView textViewWasseranteil = (TextView) view.findViewById(R.id.textViewWasseranteil);
 			TextView textViewMuskelanteil = (TextView) view.findViewById(R.id.textViewMuskelanteil);
@@ -85,7 +85,7 @@ public class DatumGewichtsAdapter extends SimpleCursorAdapter {
 
 				textViewDatum.setText(parent.getContext().getString(R.string.datumGewichtsAdapterDate) + ": "
 						+ cursor.getString(cursor.getColumnIndex(DatumGewichtTable.COLUMN_DATUM)));
-				// In der Datenbank werden nur metrische Werte gespeichert, deshalbt müssen diese hier gegebenfalls umgerechnet werden.
+				// In der Datenbank werden nur metrische Werte gespeichert, deshalbt mÃ¼ssen diese hier gegebenfalls umgerechnet werden.
 				String einheitensystem = Einstellungen.getAnwendungsEinstellungen(view.getContext()).getString(Einstellungen.KEY_EINHEITENSYSTEM, "metrisch");
 				if ("metrisch".equals(einheitensystem)) {
 					String tmpGewicht = cursor.getString(cursor.getColumnIndex(DatumGewichtTable.COLUMN_GEWICHT));
@@ -94,7 +94,7 @@ public class DatumGewichtsAdapter extends SimpleCursorAdapter {
 					}
 					float berechneterBMI = bmiRechner.berechneBMIAsFlaot(Float.parseFloat(tmpGewicht), bmiRechner.getKoerpergroesse());
 //					textViewGewicht.setText(view.getContext().getString(R.string.ihrBMI) + ": " + BMIRechner.DECIMAL_FORMAT.format(berechneterBMI));
-					// Den richtigen BMIBereich für das Alter und Geschlecht suchen
+					// Den richtigen BMIBereich fÃ¼r das Alter und Geschlecht suchen
 					BMIBereich bmiBereich = null;
 					if (bmiRechner.getGeschlecht().equals("maennlich")) {
 						for (BMIBereich currentBMIBereich : BMIRechner.maennerBMIBereiche) {
@@ -149,7 +149,7 @@ public class DatumGewichtsAdapter extends SimpleCursorAdapter {
 					}
 					float berechneterBMI = bmiRechner.berechneBMIAsFlaot(Float.parseFloat(tmpGewicht) * BMIRechner.KG_TO_POUND, bmiRechner.getKoerpergroesse());
 					textViewGewicht.setText(view.getContext().getString(R.string.ihrBMI) + ": " + BMIRechner.DECIMAL_FORMAT.format(berechneterBMI));
-					// Den richtigen BMIBereich für das Alter und Geschlecht suchen
+					// Den richtigen BMIBereich fÃ¼r das Alter und Geschlecht suchen
 					BMIBereich bmiBereich = null;
 					if (bmiRechner.getGeschlecht().equals("maennlich")) {
 						for (BMIBereich currentBMIBereich : BMIRechner.maennerBMIBereiche) {
@@ -200,7 +200,7 @@ public class DatumGewichtsAdapter extends SimpleCursorAdapter {
 				}
 			}
 			
-			// Prüfen ob zu den unterschiedlichen Anteilen Angaben gemacht wurden und dann entsprechend anzeigen (oder auch nicht)
+			// PrÃ¼fen ob zu den unterschiedlichen Anteilen Angaben gemacht wurden und dann entsprechend anzeigen (oder auch nicht)
 			try {
 				boolean showFettanteil = false;
 				boolean showWasseranteil = false;
@@ -248,7 +248,7 @@ public class DatumGewichtsAdapter extends SimpleCursorAdapter {
 					textViewMuskelanteilLabel.setVisibility(View.VISIBLE);
 				}
 			} catch (Exception e) {
-				Log.e(TAG, "Fehler beim erstellen der zusätzlichen Angaben bei GewichtBearbeiten-View. Position: " + position, e);
+				Log.e(TAG, "Fehler beim erstellen der zusÃ¤tzlichen Angaben bei GewichtBearbeiten-View. Position: " + position, e);
 			}
 		} catch (Exception e) {
 			Log.e(TAG, "Fehler beim erstellen der View. Position: " + position, e);

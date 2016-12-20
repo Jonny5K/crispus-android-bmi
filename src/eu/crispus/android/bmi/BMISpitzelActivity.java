@@ -20,8 +20,8 @@ import android.widget.TextView;
 
 /**
  * Programm um sein Gewicht zu Dokumentieren. Es kann pro Tag ein Gewicht in Kg eingegeben werden. Mit Hilfe des Gewichts und 
- * der Angaben des Geburtstags, der Grˆﬂe und des Geschlechts wird dann der Body-Maﬂ-Index (BMI) berechnet.
- * Der BMI kann f¸r die letzten 7 Tage in einem Graphen angezeigt werden. Das Gewicht der letzten 7 Tage wird ebenfalls im
+ * der Angaben des Geburtstags, der Gr√∂√üe und des Geschlechts wird dann der Body-Ma√ü-Index (BMI) berechnet.
+ * Der BMI kann f√ºr die letzten 7 Tage in einem Graphen angezeigt werden. Das Gewicht der letzten 7 Tage wird ebenfalls im
  * Graphen angezeigt.
  * 
  * @author Johannes Kraus
@@ -35,12 +35,12 @@ public class BMISpitzelActivity extends Activity {
 	private static final String TAG = "BMISpitzelActivity";
 
 	/**
-	 * Id f¸r den Informations-Dialog.
+	 * Id f√ºr den Informations-Dialog.
 	 */
 	private static final int DIALOG_INFO_ID = 0;
 
 	/**
-	 * Angabe der Programmversion. Wird eigentlich mit PackageInfo aus dem AndroidManifest gelesen, wird nur im Fehlerfall benˆtigt.
+	 * Angabe der Programmversion. Wird eigentlich mit PackageInfo aus dem AndroidManifest gelesen, wird nur im Fehlerfall ben√∂tigt.
 	 */
 	public static final String VERSION = "1.11.0.0";
 
@@ -53,7 +53,7 @@ public class BMISpitzelActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		Einstellungen.loadLocalInformation(getBaseContext());
 		
-		//Wenn noch kein Einheitensystem gew‰hlt wurde, dann wird das metrische-System als Standard gesetzt.
+		//Wenn noch kein Einheitensystem gew√§hlt wurde, dann wird das metrische-System als Standard gesetzt.
 		SharedPreferences sharedPreferences = Einstellungen.getAnwendungsEinstellungen(getBaseContext());
 		String tmpStringEinheitensystem = Einstellungen.getAnwendungsEinstellungen(getBaseContext()).getString(Einstellungen.KEY_EINHEITENSYSTEM, Einstellungen.NONE);
 		if (Einstellungen.NONE.equals(tmpStringEinheitensystem)) {
@@ -61,7 +61,7 @@ public class BMISpitzelActivity extends Activity {
 			editor.putString(Einstellungen.KEY_EINHEITENSYSTEM, "metrisch");
 			editor.commit();
 		}
-		//Wenn noch keine Amputationen gew‰hlt wurden, dann wird "- keine Amputation -" gespeichert.
+		//Wenn noch keine Amputationen gew√§hlt wurden, dann wird "- keine Amputation -" gespeichert.
 		String tmpStringAmputation = Einstellungen.getAnwendungsEinstellungen(getBaseContext()).getString(Einstellungen.KEY_AMPUTATION, Einstellungen.NONE);
 		if (Einstellungen.NONE.equals(tmpStringAmputation)) {
 			SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -83,7 +83,7 @@ public class BMISpitzelActivity extends Activity {
 	}
 	
 	/**
-	 * Einfacher Trick um die Sprache der App anzupassen. Wenn in den Einstellungen die Schriftart ge‰ndert wurde, wird der Bildschirm einmal gedreht, dadurch
+	 * Einfacher Trick um die Sprache der App anzupassen. Wenn in den Einstellungen die Schriftart ge√§ndert wurde, wird der Bildschirm einmal gedreht, dadurch
 	 * wird die App neu gezeichnet.
 	 */
 	@Override
@@ -97,11 +97,11 @@ public class BMISpitzelActivity extends Activity {
 	}
 
 	/**
-	 * OnClick Ereignis der Schaltfl‰che zur Gewichtseingabe eines bestimmten
+	 * OnClick Ereignis der Schaltfl√§che zur Gewichtseingabe eines bestimmten
 	 * Datums.
 	 * 
 	 * @param view
-	 *            Schaltfl‰che die aktiviert (gedr¸ckt) wurde.
+	 *            Schaltfl√§che die aktiviert (gedr√ºckt) wurde.
 	 */
 	public void onClickButtonGewichtEingeben(final View view) {
 		try {
@@ -113,11 +113,11 @@ public class BMISpitzelActivity extends Activity {
 	}
 
 	/**
-	 * OnClick Ereignis der Schaltfl‰che zur Gewichtseingabe eines bestimmten
+	 * OnClick Ereignis der Schaltfl√§che zur Gewichtseingabe eines bestimmten
 	 * Datums.
 	 * 
 	 * @param view
-	 *            Schaltfl‰che die aktiviert (gedr¸ckt) wurde.
+	 *            Schaltfl√§che die aktiviert (gedr√ºckt) wurde.
 	 */
 	public void onClickButtonGewichtBearbeiten(final View view) {
 		try {
@@ -129,10 +129,10 @@ public class BMISpitzelActivity extends Activity {
 	}
 
 	/**
-	 * OnClick Ereignis der Schaltfl‰che um den Verlaufsgraphen anzuzeigen.
+	 * OnClick Ereignis der Schaltfl√§che um den Verlaufsgraphen anzuzeigen.
 	 * 
 	 * @param view
-	 *            Schaltfl‰che die aktiviert (gedr¸ckt) wurde.
+	 *            Schaltfl√§che die aktiviert (gedr√ºckt) wurde.
 	 */
 	public void onClickButtonGraphAnzeigen(final View view) {
 		try {
@@ -144,10 +144,10 @@ public class BMISpitzelActivity extends Activity {
 	}
 	
 	/**
-	 * OnClick Ereignis der Schaltfl‰che um den BMI direkt zu berechnen.
+	 * OnClick Ereignis der Schaltfl√§che um den BMI direkt zu berechnen.
 	 * 
 	 * @param view
-	 *            Schaltfl‰che die aktiviert (gedr¸ckt) wurde.
+	 *            Schaltfl√§che die aktiviert (gedr√ºckt) wurde.
 	 */
 	public void onClickButtonBmiBerechnen(final View view) {
 		try {
@@ -159,10 +159,10 @@ public class BMISpitzelActivity extends Activity {
 	}
 	
 	/**
-	 * OnClick Ereignis der Schaltfl‰che zur Einstellungen.
+	 * OnClick Ereignis der Schaltfl√§che zur Einstellungen.
 	 * 
 	 * @param view
-	 *            Schaltfl‰che die aktiviert (gedr¸ckt) wurde.
+	 *            Schaltfl√§che die aktiviert (gedr√ºckt) wurde.
 	 */
 	public void onClickButtonEinstellungen(final View view) {
 		try {
@@ -174,10 +174,10 @@ public class BMISpitzelActivity extends Activity {
 	}
 	
 	/**
-	 * OnClick Ereignis der Schaltfl‰che zur eMail an den Entwickler.
+	 * OnClick Ereignis der Schaltfl√§che zur eMail an den Entwickler.
 	 * 
 	 * @param view
-	 *            Schaltfl‰che die aktiviert (gedr¸ckt) wurde.
+	 *            Schaltfl√§che die aktiviert (gedr√ºckt) wurde.
 	 */
 	public void onClickButtonEMailAnEntwickler(final View view) {
 		try {
@@ -193,7 +193,7 @@ public class BMISpitzelActivity extends Activity {
 	}
 
 	/**
-	 * In der folgenden Methode wird das Men¸ (hauptmenu.xml) in die Startseite
+	 * In der folgenden Methode wird das Men√º (hauptmenu.xml) in die Startseite
 	 * eingebunden.
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class BMISpitzelActivity extends Activity {
 	}
 
 	/**
-	 * In der folgenden Methode werden die Men¸-Eintr‰ge abgearbeitet.
+	 * In der folgenden Methode werden die Men√º-Eintr√§ge abgearbeitet.
 	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -247,7 +247,7 @@ public class BMISpitzelActivity extends Activity {
 	}
 
 	/**
-	 * Diese Methode erzeugt den Info-‹ber Dialog der App.
+	 * Diese Methode erzeugt den Info-√úber Dialog der App.
 	 */
 	@Override
 	protected Dialog onCreateDialog(int id) {
@@ -257,7 +257,7 @@ public class BMISpitzelActivity extends Activity {
 			dialog.setContentView(R.layout.infoueber);
 			dialog.setTitle(getString(R.string.bmiSpitzelActivityInfoUeberDialog));//"Info zu Crispus\u00ae BMI-Spitzel");
 			TextView text = (TextView) dialog.findViewById(R.id.name);
-			text.setText(getString(R.string.bmiSpitzelActivityInfoUeberDialogName));//"Body Maﬂ Index (BMI)-Spitzel");
+			text.setText(getString(R.string.bmiSpitzelActivityInfoUeberDialogName));//"Body Ma√ü Index (BMI)-Spitzel");
 			text = (TextView) dialog.findViewById(R.id.version);
 			PackageInfo packageInfo;
 			try {
@@ -280,16 +280,16 @@ public class BMISpitzelActivity extends Activity {
 	}
 	
 	/**
-	 * Methode um bei einem Click auf den Zur¸ck-Button in der Titlebar.
+	 * Methode um bei einem Click auf den Zur√ºck-Button in der Titlebar.
 	 * 
 	 * @param view
-	 *            Button der gedr¸ckt wurde.
+	 *            Button der gedr√ºckt wurde.
 	 */
 	public void onClickButtonBackTitlebar(View view) {
 		try {
 			finish();// Beenden der App
 		} catch (Exception e) {
-			Log.e(TAG, "Fehler beim schlieﬂen der App.", e);
+			Log.e(TAG, "Fehler beim schlie√üen der App.", e);
 		}
 	}
 }

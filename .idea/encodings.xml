@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/BMIBerechnenActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/BMISpitzelActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/Einstellungen.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/GewichtBearbeitenActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/GewichtEingebenActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/GraphActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/HilfeAnzeigenActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/dbutil/BMISpitzelDatenbank.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/dbutil/DatumGewichtDAOEntry.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/dbutil/DatumGewichtTable.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/guiutil/BMIRechner.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/guiutil/CharacterManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/guiutil/DatumGewichtsAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/guiutil/EditKeyListenerCloseOnEnter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/guiutil/Graph.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/guiutil/GraphAuswahlEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/guiutil/Hintergrund.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/guiutil/TextWatcherNurEinKommaOderPunkt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/guiutil/ZeitAuswahlEnum.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/util/BMIBereich.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/util/Bereich.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/eu/crispus/android/bmi/util/SpinnerItem.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

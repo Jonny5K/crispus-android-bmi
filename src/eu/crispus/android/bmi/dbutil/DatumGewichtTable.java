@@ -1,8 +1,8 @@
 package eu.crispus.android.bmi.dbutil;
 
 /**
- * Schema-Klasse um auf die Datenbankfelder der Tabelle datum_gewicht zugreifen zu können. Hier werden alle Spalten der oben genannten Tabelle festgehalten.
- * Zudem die Standard SQL-Befehle, die häufig genutzt werden.
+ * Schema-Klasse um auf die Datenbankfelder der Tabelle datum_gewicht zugreifen zu kÃ¶nnen. Hier werden alle Spalten der oben genannten Tabelle festgehalten.
+ * Zudem die Standard SQL-Befehle, die hÃ¤ufig genutzt werden.
  * 
  * @author Johannes Kraus
  * @version 1.0
@@ -25,17 +25,17 @@ public class DatumGewichtTable {
 	public static final String COLUMN_GEWICHT = "gewicht";
 
 	/**
-	 * Name der Spalte für Körperfettanteil.
+	 * Name der Spalte fÃ¼r KÃ¶rperfettanteil.
 	 */
 	public static final String COLUMN_FETT = "fettanteil";
 
 	/**
-	 * Name der Spalte für Wasseranteil.
+	 * Name der Spalte fÃ¼r Wasseranteil.
 	 */
 	public static final String COLUMN_WASSER = "wasseranteil";
 
 	/**
-	 * Name der Spalte für Muskelanteil.
+	 * Name der Spalte fÃ¼r Muskelanteil.
 	 */
 	public static final String COLUMN_MUSKEL = "muskelanteil";
 
@@ -51,43 +51,43 @@ public class DatumGewichtTable {
 			+ " DATE NOT NULL, " + COLUMN_GEWICHT + " REAL NOT NULL);";
 
 	/**
-	 * SQL-Befhel um neue Spalte 'fettanteil' an die Tabelle anzuhängen (erstes Update der Datenbank).
+	 * SQL-Befhel um neue Spalte 'fettanteil' an die Tabelle anzuhÃ¤ngen (erstes Update der Datenbank).
 	 */
 	public static final String SQL_ALTER_TABLE_UPDATE_FETTANTEIL = "ALTER TABLE " + TABLE_NAME + " ADD " + COLUMN_FETT + " REAL NOT NULL DEFAULT(-1);";
 
 	/**
-	 * SQL-Befhel um neue Spalte 'wasseranteil' an die Tabelle anzuhängen (erstes Update der Datenbank).
+	 * SQL-Befhel um neue Spalte 'wasseranteil' an die Tabelle anzuhÃ¤ngen (erstes Update der Datenbank).
 	 */
 	public static final String SQL_ALTER_TABLE_UPDATE_WASSERANTEIL = "ALTER TABLE " + TABLE_NAME + " ADD " + COLUMN_WASSER + " REAL NOT NULL DEFAULT(-1);";
 
 	/**
-	 * SQL-Befhel um neue Spalte 'muskelanteil' an die Tabelle anzuhängen (erstes Update der Datenbank).
+	 * SQL-Befhel um neue Spalte 'muskelanteil' an die Tabelle anzuhÃ¤ngen (erstes Update der Datenbank).
 	 */
 	public static final String SQL_ALTER_TABLE_UPDATE_MUSKELANTEIL = "ALTER TABLE " + TABLE_NAME + " ADD " + COLUMN_MUSKEL + " REAL NOT NULL DEFAULT(-1);";
 
 	/**
-	 * SQL-Befehl zum löschen der Tabelle.
+	 * SQL-Befehl zum lÃ¶schen der Tabelle.
 	 */
 	public static final String SQL_DROP = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
 	/**
-	 * SQL-Befehl zum einfügen neuer Datensätze.
+	 * SQL-Befehl zum einfÃ¼gen neuer DatensÃ¤tze.
 	 */
 	public static final String SQL_INSERT = "INSERT INTO " + TABLE_NAME + " (" + COLUMN_DATUM + ", " + COLUMN_GEWICHT + ", " + COLUMN_FETT + ", "
 			+ COLUMN_WASSER + ", " + COLUMN_MUSKEL + ") VALUES (?, ?, ?, ?, ?)";
 
 	/**
-	 * SQL-Befehl zum einfügen neuer Datensätze.
+	 * SQL-Befehl zum einfÃ¼gen neuer DatensÃ¤tze.
 	 */
 	public static final String SQL_UPDATE = "UPDATE " + TABLE_NAME + " SET " + COLUMN_GEWICHT + "=?, " + COLUMN_FETT + "=?, " + COLUMN_WASSER + "=?, " + COLUMN_MUSKEL + "=? WHERE " + COLUMN_DATUM + "=?";
 
 	/**
-	 * SQL-Befehl zum löschen aller Datensätze. bmiSpitzelDatenbank.getWritableDatabase().execSQL(DatumGewichtTable.SQL_DELETE, new String[]{});
+	 * SQL-Befehl zum lÃ¶schen aller DatensÃ¤tze. bmiSpitzelDatenbank.getWritableDatabase().execSQL(DatumGewichtTable.SQL_DELETE, new String[]{});
 	 */
 	public static final String SQL_DELETE = "DELETE FROM " + TABLE_NAME;
 
 	/**
-	 * SQL-Befehl auswählen aller Datensätze. Sortiert nach Datum!
+	 * SQL-Befehl auswÃ¤hlen aller DatensÃ¤tze. Sortiert nach Datum!
 	 * 
 	 * try { BMISpitzelDatenbank bmiSpitzelDatenbank = new BMISpitzelDatenbank(this); Cursor cursor =
 	 * bmiSpitzelDatenbank.getReadableDatabase().rawQuery(DatumGewichtTable.SQL_SELECT_ALL, null); cursor.moveToFirst(); int postion = 0; while
@@ -103,7 +103,7 @@ public class DatumGewichtTable {
 			+ ",4 ,2)||substr(" + COLUMN_DATUM + ", 0, 3)) DESC";
 
 	/**
-	 * SQL-Befehl auswählen eines Datensatzes (gefiltert nach Datum).
+	 * SQL-Befehl auswÃ¤hlen eines Datensatzes (gefiltert nach Datum).
 	 */
 	public static final String SQL_SELECT_BY_DATE = "SELECT " + COLUMN_DATUM + ", " + COLUMN_GEWICHT + " FROM " + TABLE_NAME + " WHERE " + COLUMN_DATUM + "=?";
 }

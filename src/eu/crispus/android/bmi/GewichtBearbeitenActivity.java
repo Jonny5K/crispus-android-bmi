@@ -41,7 +41,7 @@ import eu.crispus.android.bmi.guiutil.DatumGewichtsAdapter;
 import eu.crispus.android.bmi.util.SpinnerItem;
 
 /**
- * Klasse um ein bestehendes Gewicht zu bearbeiten bzw. zu löschen.
+ * Klasse um ein bestehendes Gewicht zu bearbeiten bzw. zu lÃ¶schen.
  * 
  * @author Johannes Kraus
  * @version 1.0
@@ -54,12 +54,12 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	private static final String TAG = "GewichtBearbeitenActivity";
 
 	/**
-	 * Name der Datei, die für den Datenexport abgelegt wird.
+	 * Name der Datei, die fÃ¼r den Datenexport abgelegt wird.
 	 */
 	private static final String FILENAME = "BMI_SPITZEL.csv";
 
 	/**
-	 * Trennzeichen für die Einträge der CSV-Datei.
+	 * Trennzeichen fÃ¼r die EintrÃ¤ge der CSV-Datei.
 	 */
 	private static final String CSV_SEPARATOR = ";";
 	
@@ -74,19 +74,19 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	private BMISpitzelDatenbank bmiSpitzelDatenbank;
 	
 	/**
-	 * ID um den Nachfragedialog zum überschreiben einer existierenden Datei zu
+	 * ID um den Nachfragedialog zum Ã¼berschreiben einer existierenden Datei zu
 	 * identifizieren.
 	 */
 	private static final int OVERWRITE_EXISTING_FILE_DIALOG_ID = 1;
 	
 	/**
-	 * ID um den Nachfragedialog zum Löschen aller Datensätzen beim importieren zu
+	 * ID um den Nachfragedialog zum LÃ¶schen aller DatensÃ¤tzen beim importieren zu
 	 * identifizieren.
 	 */
 	private static final int OVERWRITE_DELETE_DIALOG_ID = 2;
 
 	/**
-	 * Cursor auf die Datenbank. Wird als Datenelement verwaltet, damit mit cursor.requery(); Änderungen an der Datenmenge beachtet werden können.
+	 * Cursor auf die Datenbank. Wird als Datenelement verwaltet, damit mit cursor.requery(); Ã„nderungen an der Datenmenge beachtet werden kÃ¶nnen.
 	 */
 	private Cursor cursorTop;
 
@@ -135,7 +135,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	
 	/**
 	 * Die onResume-Methode wird aufgerufen, wenn die View "wieder" angezeigt wird, ohne dass Sie vorher beendet wurde. Falls aus dem Dialog in die Prefenreces
-	 * gesprungen wird müssen die Texte gegebenfalls wieder angepasst werden.
+	 * gesprungen wird mÃ¼ssen die Texte gegebenfalls wieder angepasst werden.
 	 */
 	@Override
 	protected void onResume() {
@@ -145,8 +145,8 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	}
 
 	/**
-	 * Diese Methode befüllt die Auswahl-Box spinnerFilterAnzahl mit Einträgen zum Filtern von den Daten. Dabei sind die
-	 * Grenzen 10, 25, 50 und alle Einträge vorhanden. Wenn ein Einträg aus dem Spinner ausgewählt wird, wird der aktuelle
+	 * Diese Methode befÃ¼llt die Auswahl-Box spinnerFilterAnzahl mit EintrÃ¤gen zum Filtern von den Daten. Dabei sind die
+	 * Grenzen 10, 25, 50 und alle EintrÃ¤ge vorhanden. Wenn ein EintrÃ¤g aus dem Spinner ausgewÃ¤hlt wird, wird der aktuelle
 	 * Cursor geschlossen und ein neuer Query erzeugt und entsprechend aktiv gesetzt. 
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -187,7 +187,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 		SharedPreferences sharedPreferences = Einstellungen.getAnwendungsEinstellungen(getBaseContext());
 		String tmpAnzahlEintraege = sharedPreferences.getString(Einstellungen.KEY_GEWICHTBEARBEITEN_ANZAHL, Einstellungen.NONE);
 		if (tmpAnzahlEintraege.equals(Einstellungen.NONE)) {
-			//Es wurde noch kein Eintrag ausgewählt, standardmäßig werden nur 25 Einträge angezeigt.
+			//Es wurde noch kein Eintrag ausgewÃ¤hlt, standardmÃ¤ÃŸig werden nur 25 EintrÃ¤ge angezeigt.
 			spinnerFilterAnzahl.setSelection(1);
 		} else {
 			if (tmpAnzahlEintraege.equals("10")) {
@@ -199,7 +199,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 			} else if (tmpAnzahlEintraege.equals("" + Integer.MAX_VALUE)) {
 				spinnerFilterAnzahl.setSelection(3);
 			} else {
-				//Der gespeicherte Eintrag existiert nicht, es wird der Standard-Eintrag (25) ausgewählt.
+				//Der gespeicherte Eintrag existiert nicht, es wird der Standard-Eintrag (25) ausgewÃ¤hlt.
 				spinnerFilterAnzahl.setSelection(1);
 			}
 		}
@@ -210,7 +210,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	}
 	
 	/**
-	 * In der folgenden Methode wird das Menü (menue_gewicht_bearbeiten.xml) in die Gewicht-Bearbeiten-Seite eingebunden.
+	 * In der folgenden Methode wird das MenÃ¼ (menue_gewicht_bearbeiten.xml) in die Gewicht-Bearbeiten-Seite eingebunden.
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -219,7 +219,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	}
 
 	/**
-	 * In der folgenden Methode werden die Menü-Einträge abgearbeitet.
+	 * In der folgenden Methode werden die MenÃ¼-EintrÃ¤ge abgearbeitet.
 	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -258,10 +258,10 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	}
 
 	/**
-	 * Diese Methode erledigt den Export aller Daten aus der Datenbank in eine einfache CSV-Datei. Die Einträge in der CSV-Datei sind wie folgt aufgebaut: ID;
+	 * Diese Methode erledigt den Export aller Daten aus der Datenbank in eine einfache CSV-Datei. Die EintrÃ¤ge in der CSV-Datei sind wie folgt aufgebaut: ID;
 	 * Datum; Gewicht
 	 * 
-	 * @param ignoreExistingFile Gibt an, ob eine vorhandene Datei einfach überschrieben werden soll.
+	 * @param ignoreExistingFile Gibt an, ob eine vorhandene Datei einfach Ã¼berschrieben werden soll.
 	 */
 	private void exportDataToSDCard(boolean ignoreExistingFile) {
 		try {
@@ -305,8 +305,8 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	}
 
 	/**
-	 * Diese Methode erledigt den Import aller Daten aus einer einfachen CSV-Datei in die Datenbank. Es werden alle bestehenden Einträge gelöscht (Der Benutzer
-	 * wird vorab gefragt, ob er sicher ist). Die Einträge in der CSV-Datei sind wie folgt aufgebaut: ID; Datum; Gewicht
+	 * Diese Methode erledigt den Import aller Daten aus einer einfachen CSV-Datei in die Datenbank. Es werden alle bestehenden EintrÃ¤ge gelÃ¶scht (Der Benutzer
+	 * wird vorab gefragt, ob er sicher ist). Die EintrÃ¤ge in der CSV-Datei sind wie folgt aufgebaut: ID; Datum; Gewicht
 	 */
 	private void importDataFromSDCard() {
 		try {
@@ -341,7 +341,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 					while (currentLine != null) {
 						stringTokenizer = new StringTokenizer(currentLine, CSV_SEPARATOR);
 						try {
-							stringTokenizer.nextToken(); //ID wird nicht benötigt
+							stringTokenizer.nextToken(); //ID wird nicht benÃ¶tigt
 							datum = stringTokenizer.nextToken();
 							gewicht = stringTokenizer.nextToken().replace(',', '.');
 							fettAnteil = stringTokenizer.nextToken().replace(',', '.');
@@ -351,7 +351,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 									new String[] { datum, gewicht, fettAnteil, wasserAnteil, muskelAnteil });
 							
 						} catch (Exception e) {
-							Log.e(TAG, "Fehler beim einem CSV-Eintrag wird ignoriert und mit den übrigen weiter gearbeitet.");
+							Log.e(TAG, "Fehler beim einem CSV-Eintrag wird ignoriert und mit den Ã¼brigen weiter gearbeitet.");
 						}
 						currentLine = bufferedReader.readLine();
 					}
@@ -374,7 +374,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	}
 
 	/**
-	 * Hier wird ein ContextMenu an die einzelnen List-Einträge gehangen.
+	 * Hier wird ein ContextMenu an die einzelnen List-EintrÃ¤ge gehangen.
 	 */
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
@@ -385,7 +385,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	}
 
 	/**
-	 * Diese Methode wird aufgerufen, wenn eine Eintrag aus dem Kontextmenü aufgerufen wurde.
+	 * Diese Methode wird aufgerufen, wenn eine Eintrag aus dem KontextmenÃ¼ aufgerufen wurde.
 	 */
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
@@ -429,7 +429,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 						new String[] { selectedDatumString });
 				cursorTop.requery();
 			} catch (Exception e) {
-				Log.e(TAG, "Fehler beim löschen aus der Datenbank.", e);
+				Log.e(TAG, "Fehler beim lÃ¶schen aus der Datenbank.", e);
 			}
 			return true;
 		}
@@ -446,7 +446,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	}
 	
 	/**
-	 * Hier werden die Dialoge erzeugt, die event. in der Activity benötigt werden.
+	 * Hier werden die Dialoge erzeugt, die event. in der Activity benÃ¶tigt werden.
 	 */
 	@Override
 	protected Dialog onCreateDialog(int id) {
@@ -474,7 +474,7 @@ public class GewichtBearbeitenActivity extends ListActivity {
 					.setPositiveButton(getString(R.string.gewichtEingebenActivityPositiveButton), new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int id) {
-							//Wenn OK gewählt wurde, dann werden alle Einträge in der DB gelöscht und die Methode "" erneut aufgerufen.
+							//Wenn OK gewÃ¤hlt wurde, dann werden alle EintrÃ¤ge in der DB gelÃ¶scht und die Methode "" erneut aufgerufen.
 							bmiSpitzelDatenbank.getWritableDatabase().execSQL(DatumGewichtTable.SQL_DELETE, new String[]{});
 							importDataFromSDCard();
 						}
@@ -491,16 +491,16 @@ public class GewichtBearbeitenActivity extends ListActivity {
 	}
 	
 	/**
-	 * Methode um bei einem Click auf den Zurück-Button in der Titlebar.
+	 * Methode um bei einem Click auf den ZurÃ¼ck-Button in der Titlebar.
 	 * 
 	 * @param view
-	 *            Button der gedrückt wurde.
+	 *            Button der gedrÃ¼ckt wurde.
 	 */
 	public void onClickButtonBackTitlebar(View view) {
 		try {
 			finish();
 		} catch (Exception e) {
-			Log.e(TAG, "Fehler beim Zurück-Button in der Title Bar.", e);
+			Log.e(TAG, "Fehler beim ZurÃ¼ck-Button in der Title Bar.", e);
 		}
 	}
 }

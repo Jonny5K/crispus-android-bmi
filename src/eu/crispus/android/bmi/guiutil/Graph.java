@@ -21,7 +21,7 @@ import eu.crispus.android.bmi.guiutil.CharacterManager.Orientation;
 import eu.crispus.android.bmi.util.BMIBereich;
 
 /**
- * Diese Klasse ist zum Zeichnen des Graphen zuständig. Sie zeichnet den Graph und dessen Inhalt. Der Inhalt wird hier direkt aus der Datenbank geladen.
+ * Diese Klasse ist zum Zeichnen des Graphen zustÃ¤ndig. Sie zeichnet den Graph und dessen Inhalt. Der Inhalt wird hier direkt aus der Datenbank geladen.
  * 
  * @author Johannes Kraus
  * @version 1.0
@@ -44,7 +44,7 @@ public class Graph {
 	private CharacterManager characterManager;
 
 	/**
-	 * Buffer für die Farben des Gewichtsverlauf.
+	 * Buffer fÃ¼r die Farben des Gewichtsverlauf.
 	 */
 	private final FloatBuffer colorBuffer;
 	
@@ -52,18 +52,18 @@ public class Graph {
 	 * Array mit den Koordinaten, um einen Graphen zu zeichnen.
 	 */
 	private final float[] vertices = { 0.0f, 2.0f, 0.0f, 0.0f, -0.1f, 0.0f, -0.1f, 0.0f, 0.0f, 4.0f, 0.0f, 0.0f,
-			// Koordinaten für die Pfeil an der Y-Achse
+			// Koordinaten fÃ¼r die Pfeil an der Y-Achse
 			-0.05f, 2.0f, 0.0f, 0.05f, 2.0f, 0.0f, 0.0f, 2.15f, 0.0f,
-			// Koordinaten für die Pfeil an der x-Achse
+			// Koordinaten fÃ¼r die Pfeil an der x-Achse
 			4.0f, 0.05f, 0.0f, 4.0f, -0.05f, 0.0f, 4.15f, 0.0f, 0.0f };
 
 	/**
-	 * Reihenfolge der Punkte im vertices Array. Wird für die richtige Darstellung des Graphen (ohne Dreicke an den Enden) benötigt.
+	 * Reihenfolge der Punkte im vertices Array. Wird fÃ¼r die richtige Darstellung des Graphen (ohne Dreicke an den Enden) benÃ¶tigt.
 	 */
 	private final short[] indicesGraph = { 0, 1, 2, 3 };
 
 	/**
-	 * Reihenfolge der Punkte im vertices Array. Wird für die richtige Darstellung des Pfeile an den Achsen des Graphen benötigt.
+	 * Reihenfolge der Punkte im vertices Array. Wird fÃ¼r die richtige Darstellung des Pfeile an den Achsen des Graphen benÃ¶tigt.
 	 */
 	private final short[] indicesGraphArrow = { 4, 5, 6, 7, 8, 9 };
 
@@ -83,27 +83,27 @@ public class Graph {
 	private final ShortBuffer indexGraphBufferArrow;
 
 	/**
-	 * Gibt das höchste Gewicht eines Benutzer's an.
+	 * Gibt das hÃ¶chste Gewicht eines Benutzer's an.
 	 */
 	private float maxGewicht = -10000;
 
 	/**
-	 * Gibt den höchsten Fettanteil eines Benutzer's an.
+	 * Gibt den hÃ¶chsten Fettanteil eines Benutzer's an.
 	 */
 	private float maxFettanteil = -10000;
 
 	/**
-	 * Gibt den höchsten Wasseranteil eines Benutzer's an.
+	 * Gibt den hÃ¶chsten Wasseranteil eines Benutzer's an.
 	 */
 	private float maxWasseranteil = -10000;
 
 	/**
-	 * Gibt den höchsten Muskelanteil eines Benutzer's an.
+	 * Gibt den hÃ¶chsten Muskelanteil eines Benutzer's an.
 	 */
 	private float maxMuskelanteil = -10000;
 
 	/**
-	 * Gibt den höchste Y Wert für ein Gewicht an.
+	 * Gibt den hÃ¶chste Y Wert fÃ¼r ein Gewicht an.
 	 */
 	private final static float MAX_Y = 2.0f;
 
@@ -128,12 +128,12 @@ public class Graph {
 	private float minMuskelanteil = 10000;
 
 	/**
-	 * Gibt den kleinstenY Wert für ein Gewicht an.
+	 * Gibt den kleinstenY Wert fÃ¼r ein Gewicht an.
 	 */
 	private final static float MIN_Y = 0.0f;
 
 	/**
-	 * Gibt einen Wert an, der zu vom MIN_GEWICHT bzw. minBMI abgezogen wird und zum MAX_GEWICHT bzw maxBMI dazu addiert wird. Damit noch etwas Platz über und
+	 * Gibt einen Wert an, der zu vom MIN_GEWICHT bzw. minBMI abgezogen wird und zum MAX_GEWICHT bzw maxBMI dazu addiert wird. Damit noch etwas Platz Ã¼ber und
 	 * unter dem Graph bleibt.
 	 */
 	private final static float RANGE_GEWICHT = 1.0f;
@@ -184,57 +184,57 @@ public class Graph {
 	private final float skalaRangeMuskelanteil;
 
 	/**
-	 * Gibt die Skalierung der Zeit-Achse (X) an. Event. später auch in die Einstellungen aufnehmen.
+	 * Gibt die Skalierung der Zeit-Achse (X) an. Event. spÃ¤ter auch in die Einstellungen aufnehmen.
 	 */
 	private final ZeitAuswahlEnum zeitAuswahlEnum;
 
 	/**
-	 * Liste mit allen Datums-Gewicht Werten, die für die Ausgabe beachtet werden sollen.
+	 * Liste mit allen Datums-Gewicht Werten, die fÃ¼r die Ausgabe beachtet werden sollen.
 	 */
 	private final ArrayList<DatumGewichtDAOEntry> datumGewichtArrayList;
 
 	/**
-	 * Array mit Vektoren für alle ausgewählten Einträge aus der Datenbank (für Gewicht-Kurve).
+	 * Array mit Vektoren fÃ¼r alle ausgewÃ¤hlten EintrÃ¤ge aus der Datenbank (fÃ¼r Gewicht-Kurve).
 	 */
 	private final float[] verticesDatumGewicht;
 
 	/**
-	 * Vertices-Array für die Punkte der Gewichts-Kurve in Form eines Vektor-Buffer.
+	 * Vertices-Array fÃ¼r die Punkte der Gewichts-Kurve in Form eines Vektor-Buffer.
 	 */
 	private final FloatBuffer vertexDatumGewichtBuffer;
 
 	/**
-	 * Vertices-Array für die Punkte der Fettanteil-Kurve in Form eines Vektor-Buffer.
+	 * Vertices-Array fÃ¼r die Punkte der Fettanteil-Kurve in Form eines Vektor-Buffer.
 	 */
 	private final FloatBuffer vertexDatumFettanteilBuffer;
 
 	/**
-	 * Vertices-Array für die Punkte der Wasseranteil-Kurve in Form eines Vektor-Buffer.
+	 * Vertices-Array fÃ¼r die Punkte der Wasseranteil-Kurve in Form eines Vektor-Buffer.
 	 */
 	private final FloatBuffer vertexDatumWasseranteilBuffer;
 
 	/**
-	 * Vertices-Array für die Punkte der Muskelanteil-Kurve in Form eines Vektor-Buffer.
+	 * Vertices-Array fÃ¼r die Punkte der Muskelanteil-Kurve in Form eines Vektor-Buffer.
 	 */
 	private final FloatBuffer vertexDatumMuskelanteilBuffer;
 
 	/**
-	 * Reihenfolge der Punkte im vertices Array. Wird für die richtige Darstellung des Gewichts-Graphen (ohne Dreicke an den Enden) benötigt.
+	 * Reihenfolge der Punkte im vertices Array. Wird fÃ¼r die richtige Darstellung des Gewichts-Graphen (ohne Dreicke an den Enden) benÃ¶tigt.
 	 */
 	private final short[] indicesDatumGewichtBmi;
 
 	/**
-	 * Array mit Vektoren für alle ausgewählten Fettanteil-Einträge aus der Datenbank (für Fettanteil-Kurve).
+	 * Array mit Vektoren fÃ¼r alle ausgewÃ¤hlten Fettanteil-EintrÃ¤ge aus der Datenbank (fÃ¼r Fettanteil-Kurve).
 	 */
 	private final float[] verticesDatumFettanteil;
 
 	/**
-	 * Array mit Vektoren für alle ausgewählten Wasseranteil-Einträge aus der Datenbank (für Wasseranteil-Kurve).
+	 * Array mit Vektoren fÃ¼r alle ausgewÃ¤hlten Wasseranteil-EintrÃ¤ge aus der Datenbank (fÃ¼r Wasseranteil-Kurve).
 	 */
 	private final float[] verticesDatumWasseranteil;
 
 	/**
-	 * Array mit Vektoren für alle ausgewählten Muskelanteil-Einträge aus der Datenbank (für Muskelanteil-Kurve).
+	 * Array mit Vektoren fÃ¼r alle ausgewÃ¤hlten Muskelanteil-EintrÃ¤ge aus der Datenbank (fÃ¼r Muskelanteil-Kurve).
 	 */
 	private final float[] verticesDatumMuskelanteil;
 
@@ -244,7 +244,7 @@ public class Graph {
 	private final ShortBuffer indicesDatumGewichtBMIBuffer;
 
 	/**
-	 * Der Kontext wird benötigt um auf die Strings aus den Ressourcen zugreifen zu können.
+	 * Der Kontext wird benÃ¶tigt um auf die Strings aus den Ressourcen zugreifen zu kÃ¶nnen.
 	 */
 	private final Context context;
 
@@ -283,14 +283,14 @@ public class Graph {
 		valueRangeMuskelanteil = maxMuskelanteil - minMuskelanteil;
 		skalaRangeMuskelanteil = (MAX_Y - MIN_Y) / valueRangeMuskelanteil;
 
-		// Hier wird ein Vektor-Array für die Punkte aufgebaut
+		// Hier wird ein Vektor-Array fÃ¼r die Punkte aufgebaut
 		int i = datumGewichtArrayList.size();
-		verticesDatumGewicht = new float[i * 3];// Array für Gewicht-Kurve
-		float[] colorsDatumGewicht = new float[i * 4];// Array für Farben der Gewicht-Kurve
+		verticesDatumGewicht = new float[i * 3];// Array fÃ¼r Gewicht-Kurve
+		float[] colorsDatumGewicht = new float[i * 4];// Array fÃ¼r Farben der Gewicht-Kurve
 		indicesDatumGewichtBmi = new short[i];// Reihenfolge der Kurven-Array (bei Gewicht und BMI gleich)
-		verticesDatumFettanteil = new float[i * 3];// Array für Fettanteil-Kurve
-		verticesDatumWasseranteil = new float[i * 3];// Array für Wasseranteil-Kurve
-		verticesDatumMuskelanteil = new float[i * 3];// Array für Muskelanteil-Kurve
+		verticesDatumFettanteil = new float[i * 3];// Array fÃ¼r Fettanteil-Kurve
+		verticesDatumWasseranteil = new float[i * 3];// Array fÃ¼r Wasseranteil-Kurve
+		verticesDatumMuskelanteil = new float[i * 3];// Array fÃ¼r Muskelanteil-Kurve
 
 		
 		BMIRechner bmiRechner = new BMIRechner(context);
@@ -316,7 +316,7 @@ public class Graph {
 		
 		int y = (i * 4) - 4;
 		i = (i * 3) - 1;
-		rangeDayX = 4.0f / zeitAuswahlEnum.getDaysOfYearValue();// Unterschied für einen Tag
+		rangeDayX = 4.0f / zeitAuswahlEnum.getDaysOfYearValue();// Unterschied fÃ¼r einen Tag
 		int lastDay = Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - zeitAuswahlEnum.getDaysOfYearValue();
 		for (DatumGewichtDAOEntry tmpDatumGewichtDAOEntry : datumGewichtArrayList) {
 			if (lastDay < 0) {
@@ -342,7 +342,7 @@ public class Graph {
 			}
 			verticesDatumGewicht[i - 1] = (Float.parseFloat(tmpStringValue) - minGewicht) * skalaRangeGewicht;
 			
-			//Berechnen des BMI und dann den Farbwert für den berechneten Wert berechnen.
+			//Berechnen des BMI und dann den Farbwert fÃ¼r den berechneten Wert berechnen.
 			if (bmiBereich != null) {
 				//Dann wird die Kurve einfach rot gezeichnet.
 				colorsDatumGewicht[y] = 1.0f;
@@ -420,7 +420,7 @@ public class Graph {
 		}
 	
 		/**
-		 * Buffer für die die Farben erzeugen.
+		 * Buffer fÃ¼r die die Farben erzeugen.
 		 */
 		ByteBuffer byteBuffer = ByteBuffer.allocateDirect(colorsDatumGewicht.length * 4);
 		byteBuffer.order(ByteOrder.nativeOrder());
@@ -428,7 +428,7 @@ public class Graph {
 		colorBuffer.put(colorsDatumGewicht);
 		colorBuffer.position(0);
 	
-		// Arrays und Buffers für die einzelnen Punkte (Einträge des Graphen).
+		// Arrays und Buffers fÃ¼r die einzelnen Punkte (EintrÃ¤ge des Graphen).
 		byteBuffer = ByteBuffer.allocateDirect(verticesDatumGewicht.length * 4);
 		byteBuffer.order(ByteOrder.nativeOrder());
 		vertexDatumGewichtBuffer = byteBuffer.asFloatBuffer();
@@ -442,42 +442,42 @@ public class Graph {
 		indicesDatumGewichtBMIBuffer.position(0);
 
 		if (Einstellungen.getAnwendungsEinstellungen(context).getBoolean(Einstellungen.KEY_FETTANTEIL, false)) {
-			// Arrays und Buffers für die einzelnen Punkte (Fettanteil-Einträge des Graphen).
+			// Arrays und Buffers fÃ¼r die einzelnen Punkte (Fettanteil-EintrÃ¤ge des Graphen).
 			byteBuffer = ByteBuffer.allocateDirect(verticesDatumFettanteil.length * 4);
 			byteBuffer.order(ByteOrder.nativeOrder());
 			vertexDatumFettanteilBuffer = byteBuffer.asFloatBuffer();
 			vertexDatumFettanteilBuffer.put(verticesDatumFettanteil);
 			vertexDatumFettanteilBuffer.position(0);
 		} else {
-			// Wird nicht benötigt (soll nicht angezeigt werden).
+			// Wird nicht benÃ¶tigt (soll nicht angezeigt werden).
 			vertexDatumFettanteilBuffer = null;
 		}
 
 		if (Einstellungen.getAnwendungsEinstellungen(context).getBoolean(Einstellungen.KEY_WASSERANTEIL, false)) {
-			// Arrays und Buffers für die einzelnen Punkte (Wasseranteil-Einträge des Graphen).
+			// Arrays und Buffers fÃ¼r die einzelnen Punkte (Wasseranteil-EintrÃ¤ge des Graphen).
 			byteBuffer = ByteBuffer.allocateDirect(verticesDatumWasseranteil.length * 4);
 			byteBuffer.order(ByteOrder.nativeOrder());
 			vertexDatumWasseranteilBuffer = byteBuffer.asFloatBuffer();
 			vertexDatumWasseranteilBuffer.put(verticesDatumWasseranteil);
 			vertexDatumWasseranteilBuffer.position(0);
 		} else {
-			// Wird nicht benötigt (soll nicht angezeigt werden).
+			// Wird nicht benÃ¶tigt (soll nicht angezeigt werden).
 			vertexDatumWasseranteilBuffer = null;
 		}
 		if (Einstellungen.getAnwendungsEinstellungen(context).getBoolean(Einstellungen.KEY_MUSKELANTEIL, false)) {
-			// Arrays und Buffers für die einzelnen Punkte (Muskelanteil-Einträge des Graphen).
+			// Arrays und Buffers fÃ¼r die einzelnen Punkte (Muskelanteil-EintrÃ¤ge des Graphen).
 			byteBuffer = ByteBuffer.allocateDirect(verticesDatumMuskelanteil.length * 4);
 			byteBuffer.order(ByteOrder.nativeOrder());
 			vertexDatumMuskelanteilBuffer = byteBuffer.asFloatBuffer();
 			vertexDatumMuskelanteilBuffer.put(verticesDatumMuskelanteil);
 			vertexDatumMuskelanteilBuffer.position(0);
 		} else {
-			// Wird nicht benötigt (soll nicht angezeigt werden).
+			// Wird nicht benÃ¶tigt (soll nicht angezeigt werden).
 			vertexDatumMuskelanteilBuffer = null;
 		}
 
 		// ----------------------------------------------------------------------------------------------------------------------------
-		// Arrays und Buffers für den Graphen.
+		// Arrays und Buffers fÃ¼r den Graphen.
 		byteBuffer = ByteBuffer.allocateDirect(vertices.length * 4);
 		byteBuffer.order(ByteOrder.nativeOrder());
 		vertexBuffer = byteBuffer.asFloatBuffer();
@@ -490,7 +490,7 @@ public class Graph {
 		indexGraphBuffer.put(indicesGraph);
 		indexGraphBuffer.position(0);
 
-		// Arrays und Buffers für Pfeile am Ende des Graphen.
+		// Arrays und Buffers fÃ¼r Pfeile am Ende des Graphen.
 		byteBuffer = ByteBuffer.allocateDirect(indicesGraphArrow.length * 2);
 		byteBuffer.order(ByteOrder.nativeOrder());
 		indexGraphBufferArrow = byteBuffer.asShortBuffer();
@@ -499,10 +499,10 @@ public class Graph {
 	}
 
 	/**
-	 * Diese Funktion zeichnet den Graph auf der übergebenen Zeichenfläche.
+	 * Diese Funktion zeichnet den Graph auf der Ã¼bergebenen ZeichenflÃ¤che.
 	 * 
 	 * @param gl
-	 *            Zeichenfläche, auf der gezeichnet werden soll.
+	 *            ZeichenflÃ¤che, auf der gezeichnet werden soll.
 	 */
 	public void draw(GL10 gl) {
 		try {
@@ -544,7 +544,7 @@ public class Graph {
 														datumGewichtArrayList.get(datumGewichtArrayList.size() - i).getDatum().getTime()).substring(0, 5),
 										Orientation.ORIENTATION_LEFT, 1.0f, 1.0f, 1.0f);
 						} else {
-							// Bei Wöchentlich und Monatlich werden alle Datumswerte ausgegeben.
+							// Bei WÃ¶chentlich und Monatlich werden alle Datumswerte ausgegeben.
 							characterManager.paintString(
 									gl,
 									""
@@ -567,7 +567,7 @@ public class Graph {
 			paintYAxisLabel(gl);
 
 			{
-				// Legende-Zeichnen (nur wenn mehr als ein Graph angezeigt wird). Dies ist der Text, der über dem Graphen steht (z.B. Fettanteil)
+				// Legende-Zeichnen (nur wenn mehr als ein Graph angezeigt wird). Dies ist der Text, der Ã¼ber dem Graphen steht (z.B. Fettanteil)
 				if (Einstellungen.getAnwendungsEinstellungen(context).getBoolean(Einstellungen.KEY_FETTANTEIL, false)
 						|| Einstellungen.getAnwendungsEinstellungen(context).getBoolean(Einstellungen.KEY_WASSERANTEIL, false)
 						|| Einstellungen.getAnwendungsEinstellungen(context).getBoolean(Einstellungen.KEY_MUSKELANTEIL, false)) {
@@ -607,7 +607,7 @@ public class Graph {
 				gl.glDrawElements(GL10.GL_TRIANGLES, indicesGraphArrow.length, GL10.GL_UNSIGNED_SHORT, indexGraphBufferArrow);
 
 				if (graphAuswahlEnum == GraphAuswahlEnum.GEWICHT) {
-					// Vertex Buffer für die Gewichts-Punkte zeichnen.
+					// Vertex Buffer fÃ¼r die Gewichts-Punkte zeichnen.
 					gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
 					gl.glColorPointer(4, GL10.GL_FLOAT, 0, colorBuffer);
 //					gl.glColor4f(0.6f, 0.0f, 0.0f, 1.0f);
@@ -626,7 +626,7 @@ public class Graph {
 					
 					gl.glDisableClientState(GL10.GL_COLOR_ARRAY);
 				} else if (graphAuswahlEnum == GraphAuswahlEnum.FETTANTEIL) {
-					// Vertex Buffer für die Fettanteil-Punkte zeichnen.
+					// Vertex Buffer fÃ¼r die Fettanteil-Punkte zeichnen.
 					gl.glColor4f(0.5f, 0.6f, 0.1f, 1.0f);
 					gl.glPointSize(7.0f);
 					gl.glVertexPointer(3, GL10.GL_FLOAT, 0, vertexDatumFettanteilBuffer);
@@ -641,7 +641,7 @@ public class Graph {
 					gl.glPointSize(0.005f);
 					gl.glDrawElements(GL10.GL_LINE_STRIP, indicesDatumGewichtBmi.length, GL10.GL_UNSIGNED_SHORT, indicesDatumGewichtBMIBuffer);
 				} else if (graphAuswahlEnum == GraphAuswahlEnum.WASSERANTEIL) {
-					// Vertex Buffer für die Wasseranteil-Punkte zeichnen.
+					// Vertex Buffer fÃ¼r die Wasseranteil-Punkte zeichnen.
 					gl.glColor4f(0.0f, 0.6f, 0.0f, 1.0f);
 					gl.glPointSize(7.0f);
 					gl.glVertexPointer(3, GL10.GL_FLOAT, 0, vertexDatumWasseranteilBuffer);
@@ -656,7 +656,7 @@ public class Graph {
 					gl.glPointSize(0.005f);
 					gl.glDrawElements(GL10.GL_LINE_STRIP, indicesDatumGewichtBmi.length, GL10.GL_UNSIGNED_SHORT, indicesDatumGewichtBMIBuffer);
 				} else if (graphAuswahlEnum == GraphAuswahlEnum.MUSKELANTEIL) {
-					// Vertex Buffer für die Muskelanteil-Punkte zeichnen.
+					// Vertex Buffer fÃ¼r die Muskelanteil-Punkte zeichnen.
 					gl.glColor4f(0.0f, 0.0f, 0.6f, 1.0f);
 					gl.glPointSize(7.0f);
 					gl.glVertexPointer(3, GL10.GL_FLOAT, 0, vertexDatumMuskelanteilBuffer);
@@ -677,7 +677,7 @@ public class Graph {
 				gl.glPopMatrix();
 			}
 		} catch (Exception e) {
-			Log.e(TAG, "Fehler beim zeichnen des Grundgerüstes.", e);
+			Log.e(TAG, "Fehler beim zeichnen des GrundgerÃ¼stes.", e);
 		}
 	}
 
@@ -687,7 +687,7 @@ public class Graph {
 	 * @see http://de.wikipedia.org/wiki/Jahr
 	 * @param year
 	 *            Jahr von dem die Anzahl der Tage ermittelt werden soll.
-	 * @return Liefert die Anzahl der Tage des übergebenen Jahrs zurück.
+	 * @return Liefert die Anzahl der Tage des Ã¼bergebenen Jahrs zurÃ¼ck.
 	 */
 	public int getDayCountInYear(int year) {
 		if (year % 400 == 0 || ((year % 4 == 0) && !(year % 100 == 0))) {
@@ -711,7 +711,7 @@ public class Graph {
 	 * Einfache Methode die nach dem auslesen der Datenbank die max und min - Grenzen der Graphen berechnet.
 	 * 
 	 * @param datumGewichtArrayList
-	 *            Liste der Einträge die berechnet werden soll.
+	 *            Liste der EintrÃ¤ge die berechnet werden soll.
 	 */
 	private void berechnetMaxUndMinGrenzenDerGraphen(ArrayList<DatumGewichtDAOEntry> datumGewichtArrayList) {
 		try {
@@ -786,7 +786,7 @@ public class Graph {
 	}
 
 	/**
-	 * Diese Methode ist für die Beschriftung der Y-Achse zuständig.
+	 * Diese Methode ist fÃ¼r die Beschriftung der Y-Achse zustÃ¤ndig.
 	 * 
 	 * @param gl Graph in dem gezeichnet wird.
 	 */
@@ -869,10 +869,10 @@ public class Graph {
 	}
 	
 	/**
-	 * Diese Methode ermöglicht es, die Auswahl des gewünschten Graphens zu setzen. Diese Auswahl
+	 * Diese Methode ermÃ¶glicht es, die Auswahl des gewÃ¼nschten Graphens zu setzen. Diese Auswahl
 	 * muss von aussen gesetzt werden, da das onToucheEvent in der Activity bearbeitet wird.
 	 * 
-	 * @param auswahl Auswahl die als nächstes im Graphen angezeigt werden soll.
+	 * @param auswahl Auswahl die als nÃ¤chstes im Graphen angezeigt werden soll.
 	 */
 	public void setGraphAuswahlEnum(GraphAuswahlEnum auswahl) {
 		graphAuswahlEnum = auswahl;

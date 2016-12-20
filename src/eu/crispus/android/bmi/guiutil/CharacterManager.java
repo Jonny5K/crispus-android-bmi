@@ -11,7 +11,7 @@ import android.graphics.Bitmap;
 import android.opengl.GLUtils;
 
 /**
- * Mit dieser Klasse können Texte in OpenGL ausgegeben werden. Die Texte können
+ * Mit dieser Klasse kÃ¶nnen Texte in OpenGL ausgegeben werden. Die Texte kÃ¶nnen
  * von der aktuellen Position in 3 Positionen ausgegeben werden: 1. Ab der
  * aktuellen Position nach links (ORIENTATION_LEFT) 2. Das der Text an der
  * aktuellen Position seine Mitte hat (ORIENTATION_CENTER) 3. Das der Text an
@@ -29,48 +29,48 @@ public class CharacterManager {
 	private static final float LETTER_WIDTH = 47.0f / 512.0f;
 
 	/**
-	 * Gibt die Höhe eines Buchstaben an.
+	 * Gibt die HÃ¶he eines Buchstaben an.
 	 */
 	private static final float LETTER_HEIGHT = 77.0f / 512.0f;
 	
 	/**
-	 * Höhe der gesamten Texture.
+	 * HÃ¶he der gesamten Texture.
 	 */
 	private static final float TEXTURE_HEIGHT = LETTER_HEIGHT * 7;
 
 	/**
-	 * Buffer für den Graphen.
+	 * Buffer fÃ¼r den Graphen.
 	 */
 	private FloatBuffer verticesBuffer = null;
 
 	/**
-	 * Buffer für die Indexe des Graphen.
+	 * Buffer fÃ¼r die Indexe des Graphen.
 	 */
 	private ShortBuffer indicesBuffer = null;
 
 	/**	
-	 * Buffer für die Texture.
+	 * Buffer fÃ¼r die Texture.
 	 */
 	private FloatBuffer textureBuffer;
 
 	/**
-	 * Texture-Id für Groß und Kleinbuchstaben.
+	 * Texture-Id fÃ¼r GroÃŸ und Kleinbuchstaben.
 	 */
 	private int textureIdLetters = -1;
 
 	/**
-	 * Texture-Id für Zahlen und Sonderzeichen. 
+	 * Texture-Id fÃ¼r Zahlen und Sonderzeichen. 
 	 * werden.
 	 */
 	private int textureIdDigits = -1;
 
 	/**
-	 * Bitmap für Groß- und Kleinbuchstaben.
+	 * Bitmap fÃ¼r GroÃŸ- und Kleinbuchstaben.
 	 */
 	private Bitmap bitmapLetters;
 
 	/**
-	 * Bitmap für Zahlen und Sonderzeichen.
+	 * Bitmap fÃ¼r Zahlen und Sonderzeichen.
 	 */
 	private Bitmap bitmapDigits;
 
@@ -139,14 +139,14 @@ public class CharacterManager {
 	}
 
 	/**
-	 * In dieser Methode wird der übergebene String string gezeichnet, der
+	 * In dieser Methode wird der Ã¼bergebene String string gezeichnet, der
 	 * Parameter orientation gibt an, wie der String ausgerichtet sein soll. mit
 	 * colorRed, colorGreen und colorBlue kann man die Farbe der Schrift
-	 * bestimmen. Am Ende der Methode wird die Farbe auf weiß gesetzt, da sich
-	 * die Farbe nicht mit glPushMatrix und glPopMatrix sichern lässt.
+	 * bestimmen. Am Ende der Methode wird die Farbe auf weiÃŸ gesetzt, da sich
+	 * die Farbe nicht mit glPushMatrix und glPopMatrix sichern lÃ¤sst.
 	 * 
 	 * @param gl
-	 *            Zeichenfläche von OpenGL
+	 *            ZeichenflÃ¤che von OpenGL
 	 * @param string
 	 *            String der ausgegeben werden soll.
 	 * @param orientation
@@ -154,7 +154,7 @@ public class CharacterManager {
 	 * @param colorRed
 	 *            RGB-Farbanteil von rot.
 	 * @param colorGreen
-	 *            RGB-Farbanteil von grün.
+	 *            RGB-Farbanteil von grÃ¼n.
 	 * @param colorBlue
 	 *            RGB-Farbanteil von blau.
 	 */
@@ -175,7 +175,7 @@ public class CharacterManager {
 			gl.glFrontFace(GL10.GL_CCW);
 			// Aktiviere Face-Culling.
 			gl.glEnable(GL10.GL_CULL_FACE);
-			// Die Rückseite mit Face-Culling löschen.
+			// Die RÃ¼ckseite mit Face-Culling lÃ¶schen.
 			gl.glCullFace(GL10.GL_BACK);
 			// Aktiviere die VerticesBuffer zum rendern
 			gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
@@ -196,7 +196,7 @@ public class CharacterManager {
 				// benoetigt werden, wird diese Texture dann benutzt.
 				gl.glBindTexture(GL10.GL_TEXTURE_2D, textureIdLetters);
 				if ((str.charAt(i) > 64) && (str.charAt(i) < 91)) {
-					// Es ist ein Großbuchstabe...
+					// Es ist ein GroÃŸbuchstabe...
 					row = (str.charAt(i) - 65) / 10;
 					column = (str.charAt(i) - 65) % 10;
 				} else if ((str.charAt(i) > 96) && (str.charAt(i) < 123)) {
@@ -204,17 +204,17 @@ public class CharacterManager {
 					row = (str.charAt(i) - (97 - 26)) / 10;
 					column = (str.charAt(i) - (97 - 26)) % 10;
 				} else {
-					// Es ist ein anderes zeichen ä, ö, ü, :, [, ], -, +
+					// Es ist ein anderes zeichen Ã¤, Ã¶, Ã¼, :, [, ], -, +
 					// Diese sind alle in der letzten Zeile.
 					row = 5;
 					switch (str.charAt(i)) {
-					case 'ö':
+					case 'Ã¶':
 						column = 2;
 						break;
-					case 'ü':
+					case 'Ã¼':
 						column = 3;
 						break;
-					case 'ä':
+					case 'Ã¤':
 						column = 4;
 						break;
 					case ':':
@@ -294,19 +294,19 @@ public class CharacterManager {
 								row = 2;
 								column = 2;
 								break;
-							case 'ß':
+							case 'ÃŸ':
 								row = 2;
 								column = 3;
 								break;
-							case 'Ü':
+							case 'Ãœ':
 								row = 2;
 								column = 4;
 								break;
-							case 'Ö':
+							case 'Ã–':
 								row = 2;
 								column = 5;
 								break;
-							case 'Ä':
+							case 'Ã„':
 								row = 2;
 								column = 6;
 								break;
@@ -361,7 +361,7 @@ public class CharacterManager {
 			// Deaktiviere Face-Culling
 			gl.glDisable(GL10.GL_CULL_FACE);
 		}
-		// Farbe auf weiß setzten, da sonst der TextureManager gegebenfalls
+		// Farbe auf weiÃŸ setzten, da sonst der TextureManager gegebenfalls
 		// Probleme bekommt.
 		gl.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		gl.glPopMatrix();
@@ -434,7 +434,7 @@ public class CharacterManager {
 	}
 
 	/**
-	 * Laden der Texture für Groß und Kleinbuchstaben.
+	 * Laden der Texture fÃ¼r GroÃŸ und Kleinbuchstaben.
 	 * 
 	 * @param gl
 	 *            OpenGL-Context auf dem gerendert wird.
@@ -456,7 +456,7 @@ public class CharacterManager {
 	}
 
 	/**
-	 * Laden der Texture für Zahlen und Sonderzeichen.
+	 * Laden der Texture fÃ¼r Zahlen und Sonderzeichen.
 	 * 
 	 * @param gl
 	 *            OpenGL-Context auf dem gerendert wird.
@@ -478,7 +478,7 @@ public class CharacterManager {
 	}
 
 	/**
-	 * Enum für die unterschiedlichen Ausrichtungen, die der Text haben kann.
+	 * Enum fÃ¼r die unterschiedlichen Ausrichtungen, die der Text haben kann.
 	 * 
 	 * @author Johannes Kraus
 	 * @version 1.0

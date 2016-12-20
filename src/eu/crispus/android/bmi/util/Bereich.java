@@ -8,20 +8,20 @@ package eu.crispus.android.bmi.util;
  */
 public class Bereich {
 	/**
-	 * Gibt den Anfangswert für einen Bereich an.
+	 * Gibt den Anfangswert fÃ¼r einen Bereich an.
 	 */
 	private int startBereich;
 	
 	/**
-	 * Gibt den Endwert für einen Bereich an.
+	 * Gibt den Endwert fÃ¼r einen Bereich an.
 	 */
 	private int endeBereich;
 
 	/**
-	 * Konstruktor um diese Klasse direkt mit Daten zu füllen.
+	 * Konstruktor um diese Klasse direkt mit Daten zu fÃ¼llen.
 	 * 
-	 * @param startBereich Gibt den Anfangswert für einen Bereich an.
-	 * @param endeBereich Gibt den Endwert für einen Bereich an.
+	 * @param startBereich Gibt den Anfangswert fÃ¼r einen Bereich an.
+	 * @param endeBereich Gibt den Endwert fÃ¼r einen Bereich an.
 	 */
 	public Bereich(int startBereich, int endeBereich) {
 		this.startBereich = startBereich;
@@ -45,20 +45,20 @@ public class Bereich {
 	}
 	
 	/**
-	 * Diese Methode überprüft ob der übergebene Wert innerhalb des Bereiches liegt.
+	 * Diese Methode Ã¼berprÃ¼ft ob der Ã¼bergebene Wert innerhalb des Bereiches liegt.
 	 * 
-	 * @param value Wert der überprüft werden soll.
-	 * @return true wenn der übergebene Wert innerhalb des angegebenen Bereichs liegt, andernfalls false.
+	 * @param value Wert der Ã¼berprÃ¼ft werden soll.
+	 * @return true wenn der Ã¼bergebene Wert innerhalb des angegebenen Bereichs liegt, andernfalls false.
 	 */
 	public boolean isWertInBereich(float value) {
 		return (value > startBereich) && (value <= endeBereich);
 	}
 	
 //	/**
-//	 * Diese Methode überprüft ob der übergebene Wert innerhalb des Bereiches liegt. Der Nachkommaanteil wird einfach abgeschnitten.
+//	 * Diese Methode Ã¼berprÃ¼ft ob der Ã¼bergebene Wert innerhalb des Bereiches liegt. Der Nachkommaanteil wird einfach abgeschnitten.
 //	 * 
-//	 * @param value Wert der überprüft werden soll.
-//	 * @return true wenn der übergebene Wert innerhalb des angegebenen Bereichs liegt, andernfalls false.
+//	 * @param value Wert der Ã¼berprÃ¼ft werden soll.
+//	 * @return true wenn der Ã¼bergebene Wert innerhalb des angegebenen Bereichs liegt, andernfalls false.
 //	 */
 //	public boolean isWertInBereich(float value) {
 //		return isWertInBereich((int) value);

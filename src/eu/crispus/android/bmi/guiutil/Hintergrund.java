@@ -16,7 +16,7 @@ import javax.microedition.khronos.opengles.GL10;
 public class Hintergrund {
 	
 	/**
-	 *  Rechteck für die Farben
+	 *  Rechteck fÃ¼r die Farben
 	 */
 	private final float[] vertices = { 
 			-40.0f, 3.0f, -50.3f, // 0, Oben links

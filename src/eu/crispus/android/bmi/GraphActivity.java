@@ -64,7 +64,7 @@ public class GraphActivity extends Activity {
 	}
 
 	/**
-	 * In dieser Methode wird der Graph zum Anzeigen der Gewichtskurve erzeugt. Wird in der Methode erledigt, da der Code doppelt benötigt wird.
+	 * In dieser Methode wird der Graph zum Anzeigen der Gewichtskurve erzeugt. Wird in der Methode erledigt, da der Code doppelt benÃ¶tigt wird.
 	 */
 	private void erzeugeGrap() {
 		GraphRenderer graphRenderer = new GraphRenderer();
@@ -96,7 +96,7 @@ public class GraphActivity extends Activity {
 	}
 
 	/**
-	 * In der folgenden Methode wird das Menü (menue_gewicht_bearbeiten.xml) in die Gewicht-Bearbeiten-Seite eingebunden.
+	 * In der folgenden Methode wird das MenÃ¼ (menue_gewicht_bearbeiten.xml) in die Gewicht-Bearbeiten-Seite eingebunden.
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -105,7 +105,7 @@ public class GraphActivity extends Activity {
 	}
 
 	/**
-	 * In der folgenden Methode werden die Menü-Einträge abgearbeitet.
+	 * In der folgenden Methode werden die MenÃ¼-EintrÃ¤ge abgearbeitet.
 	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -137,12 +137,12 @@ public class GraphActivity extends Activity {
 	}
 
 	/**
-	 * GraphRenderer für diese Klasse.
+	 * GraphRenderer fÃ¼r diese Klasse.
 	 */
 	private Graph graph = null;
 
 	/**
-	 * Diese Variable wird benötigt, um zu unterscheiden ob ein neues onTouchEvent aufgetreten ist.
+	 * Diese Variable wird benÃ¶tigt, um zu unterscheiden ob ein neues onTouchEvent aufgetreten ist.
 	 */
 	private long lastDownTime = 0;
 	
@@ -190,10 +190,10 @@ public class GraphActivity extends Activity {
 	}
 
 	/**
-	 * Diese Methode gibt an, ob eine kleine Auflösung vorhanden ist. Wenn dies der Fall ist,
-	 * dann wird der Graph anders (näher) gerendert.
+	 * Diese Methode gibt an, ob eine kleine AuflÃ¶sung vorhanden ist. Wenn dies der Fall ist,
+	 * dann wird der Graph anders (nÃ¤her) gerendert.
 	 * 
-	 * @return true wenn die Width-Auflösung kleiner als 400 px ist.
+	 * @return true wenn die Width-AuflÃ¶sung kleiner als 400 px ist.
 	 */
 	public static boolean isSmallScreenResolution() {
 		return smallScreenResolution;
@@ -208,7 +208,7 @@ class GraphRenderer implements GLSurfaceView.Renderer {
 	private Graph graph;
 
 	/**
-	 * Rechteck für den Hintergrund.
+	 * Rechteck fÃ¼r den Hintergrund.
 	 */
 	private final Hintergrund hintergrund = new Hintergrund();;
 

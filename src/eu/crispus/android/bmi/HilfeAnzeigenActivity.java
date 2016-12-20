@@ -40,13 +40,13 @@ public class HilfeAnzeigenActivity extends Activity {
 		webview.getSettings().setJavaScriptEnabled(true);
 		initialisiereWebKit(webview);
 		webview.setBackgroundColor(0);//Hintergrund auf Transparent setzen
-		webview.setBackgroundResource(R.drawable.background); //Gradient einfügen
+		webview.setBackgroundResource(R.drawable.background); //Gradient einfÃ¼gen
 		webview.bringToFront();
 	}
 	
 	/**
 	 * Die onResume-Methode wird aufgerufen, wenn die View "wieder" angezeigt wird, ohne dass Sie vorher beendet wurde. Falls aus dem Dialog in die Prefenreces
-	 * gesprungen wird müssen die Texte gegebenfalls wieder angepasst werden.
+	 * gesprungen wird mÃ¼ssen die Texte gegebenfalls wieder angepasst werden.
 	 */
 	@Override
 	protected void onResume() {
@@ -70,16 +70,16 @@ public class HilfeAnzeigenActivity extends Activity {
 	}
 	
 	/**
-	 * Methode um bei einem Click auf den Zurück-Button in der Titlebar.
+	 * Methode um bei einem Click auf den ZurÃ¼ck-Button in der Titlebar.
 	 * 
 	 * @param view
-	 *            Button der gedrückt wurde.
+	 *            Button der gedrÃ¼ckt wurde.
 	 */
 	public void onClickButtonBackTitlebar(View view) {
 		try {
 			finish();
 		} catch (Exception e) {
-			Log.e(TAG, "Fehler beim Zurück-Button in der Title Bar.", e);
+			Log.e(TAG, "Fehler beim ZurÃ¼ck-Button in der Title Bar.", e);
 		}
 	}
 }

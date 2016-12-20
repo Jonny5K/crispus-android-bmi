@@ -35,7 +35,7 @@ import eu.crispus.android.bmi.guiutil.TextWatcherNurEinKommaOderPunkt;
 import eu.crispus.android.bmi.util.BMIBereich;
 
 /**
- * Klasse um ein neues Gewicht (am aktuellen Tag) eingegeben zu können.
+ * Klasse um ein neues Gewicht (am aktuellen Tag) eingegeben zu kÃ¶nnen.
  * 
  * @author Johannes Kraus
  * @version 1.0
@@ -48,27 +48,27 @@ public class GewichtEingebenActivity extends Activity {
 	private static final String TAG = "GewichtEingebenActivity";
 
 	/**
-	 * ID um den Eingabedialog für das Datum zu identifizieren.
+	 * ID um den Eingabedialog fÃ¼r das Datum zu identifizieren.
 	 */
 	private static final int DATE_DIALOG_ID = 0;
 
 	/**
-	 * ID um den Hinweisdialog für das fehlende Eingaben zu identifizieren.
+	 * ID um den Hinweisdialog fÃ¼r das fehlende Eingaben zu identifizieren.
 	 */
 	private static final int DATA_DIALOG_ID = 1;
 
 	/**
-	 * ID um den Nachfragedialog zum Überschreiben von Datensätzen zu identifizieren.
+	 * ID um den Nachfragedialog zum Ãœberschreiben von DatensÃ¤tzen zu identifizieren.
 	 */
 	private static final int OVERWRITE_DIALOG_ID = 2;
 
 	/**
-	 * ID um den Hinweisdialog für Fehlerhafte Eingabe anzuzeigen.
+	 * ID um den Hinweisdialog fÃ¼r Fehlerhafte Eingabe anzuzeigen.
 	 */
 	private static final int DATA_DIALOG_ID_ERROR = 3;
 
 	/**
-	 * ID um den Hinweisdialog für Fehlerhafte Eingabe in den Einstellungen anzuzeigen.
+	 * ID um den Hinweisdialog fÃ¼r Fehlerhafte Eingabe in den Einstellungen anzuzeigen.
 	 */
 	private static final int ERROR_READING_PREFERENCES = 4;
 
@@ -78,22 +78,22 @@ public class GewichtEingebenActivity extends Activity {
 	public static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy");
 
 	/**
-	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachträglich verbessert werden kann.
+	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachtrÃ¤glich verbessert werden kann.
 	 */
 	private EditText editTextDatum;
 
 	/**
-	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachträglich verbessert werden kann.
+	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachtrÃ¤glich verbessert werden kann.
 	 */
 	private EditText editTextGewicht;
 
 	/**
-	 * Hier wird eine Referenz auf das Ausgabefeld gespeichert, damit dieses nachträglich gefüllt werden kann.
+	 * Hier wird eine Referenz auf das Ausgabefeld gespeichert, damit dieses nachtrÃ¤glich gefÃ¼llt werden kann.
 	 */
 	private TextView textViewBmi;
 
 	/**
-	 * Hier wird eine Referenz auf das Ausgabefeld-Label gespeichert, damit dieses nachträglich angezeigt werden kann.
+	 * Hier wird eine Referenz auf das Ausgabefeld-Label gespeichert, damit dieses nachtrÃ¤glich angezeigt werden kann.
 	 */
 	private TextView textViewBMILabel;
 
@@ -122,7 +122,7 @@ public class GewichtEingebenActivity extends Activity {
 		textViewBmi = (TextView) findViewById(R.id.textViewBmi);
 		textViewBMILabel = (TextView) findViewById(R.id.textViewBmiLabel);
 
-		// Wenn ein Datum als Extra übergeben wurde, wird dieses fest verankert.
+		// Wenn ein Datum als Extra Ã¼bergeben wurde, wird dieses fest verankert.
 		final Bundle intentExtras = getIntent().getExtras();
 		if (intentExtras != null) {
 			editTextDatum = (EditText) findViewById(R.id.editTextDatum);
@@ -130,13 +130,13 @@ public class GewichtEingebenActivity extends Activity {
 			editTextDatum.setEnabled(false);
 
 			editTextGewicht.setText(intentExtras.getString(DatumGewichtTable.COLUMN_GEWICHT));
-			// Es wird kein OnClickListern an das Feld gehangen, da dieses nicht geändert werden soll.
+			// Es wird kein OnClickListern an das Feld gehangen, da dieses nicht geÃ¤ndert werden soll.
 			// Auslesen der Anteile (Fett, Wasser und Muskeln)
 			((EditText) findViewById(R.id.editTextFettanteil)).setText(intentExtras.getString(DatumGewichtTable.COLUMN_FETT));
 			((EditText) findViewById(R.id.editTextWasseranteil)).setText(intentExtras.getString(DatumGewichtTable.COLUMN_WASSER));
 			((EditText) findViewById(R.id.editTextMuskelanteil)).setText(intentExtras.getString(DatumGewichtTable.COLUMN_MUSKEL));
 		} else {
-			// Eingabefeld für das Datum mit "heute" füllen.
+			// Eingabefeld fÃ¼r das Datum mit "heute" fÃ¼llen.
 			Date currentDate = new Date();
 			editTextDatum = (EditText) findViewById(R.id.editTextDatum);
 			editTextDatum.setText(simpleDateFormat.format(currentDate));
@@ -164,7 +164,7 @@ public class GewichtEingebenActivity extends Activity {
 
 	/**
 	 * Die onResume-Methode wird aufgerufen, wenn die View "wieder" angezeigt wird, ohne dass Sie vorher beendet wurde. Falls aus dem Dialog in die Prefenreces
-	 * gesprungen wird müssen die Texte gegebenfalls wieder angepasst werden.
+	 * gesprungen wird mÃ¼ssen die Texte gegebenfalls wieder angepasst werden.
 	 */
 	@Override
 	protected void onResume() {
@@ -180,7 +180,7 @@ public class GewichtEingebenActivity extends Activity {
 		((TextView) findViewById(R.id.textViewTitlebar)).setText(R.string.app_name);
 
 		if ("imperial".equals(Einstellungen.getAnwendungsEinstellungen(getBaseContext()).getString(Einstellungen.KEY_EINHEITENSYSTEM, Einstellungen.NONE))) {
-			// Hier werden die Texte für die Oberfläche vom metrischen Einheitensystem auf das Imperiale Einheitensystem gesetzt.
+			// Hier werden die Texte fÃ¼r die OberflÃ¤che vom metrischen Einheitensystem auf das Imperiale Einheitensystem gesetzt.
 			TextView tmpTextView = (TextView) findViewById(R.id.textViewGewicht);
 			tmpTextView.setText(tmpTextView.getText().toString().replaceAll("kilogram", getString(R.string.pfundText)));
 			tmpTextView.setText(tmpTextView.getText().toString().replaceAll("Kilogramm", getString(R.string.pfundText)));
@@ -189,7 +189,7 @@ public class GewichtEingebenActivity extends Activity {
 			tmpTextView.setText(getString(R.string.gewichtEingabeGewicht));
 		}
 
-		// Zusätzliche Eingabefelder für Körperanteile (Fett, Wasser und Muskel) sichtbar schalten
+		// ZusÃ¤tzliche Eingabefelder fÃ¼r KÃ¶rperanteile (Fett, Wasser und Muskel) sichtbar schalten
 		if (Einstellungen.getAnwendungsEinstellungen(getBaseContext()).getBoolean(Einstellungen.KEY_FETTANTEIL, false)) {
 			findViewById(R.id.textViewFettanteil).setVisibility(View.VISIBLE);
 			findViewById(R.id.editTextFettanteil).setVisibility(View.VISIBLE);
@@ -214,7 +214,7 @@ public class GewichtEingebenActivity extends Activity {
 	}
 
 	/**
-	 * In der folgenden Methode wird das Menü (menue_gewicht_bearbeiten.xml) in die Gewicht-Bearbeiten-Seite eingebunden.
+	 * In der folgenden Methode wird das MenÃ¼ (menue_gewicht_bearbeiten.xml) in die Gewicht-Bearbeiten-Seite eingebunden.
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -223,7 +223,7 @@ public class GewichtEingebenActivity extends Activity {
 	}
 
 	/**
-	 * In der folgenden Methode werden die Menü-Einträge abgearbeitet.
+	 * In der folgenden Methode werden die MenÃ¼-EintrÃ¤ge abgearbeitet.
 	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -332,7 +332,7 @@ public class GewichtEingebenActivity extends Activity {
 						}
 
 					} catch (Exception e) {
-						Log.e(TAG, "Fehler beim Einfügen in die Datenbank.", e);
+						Log.e(TAG, "Fehler beim EinfÃ¼gen in die Datenbank.", e);
 					} finally {
 						cursor.close();
 					}
@@ -369,10 +369,10 @@ public class GewichtEingebenActivity extends Activity {
 	 * Methode um die Werte des Benutzer's in die Datenbank zu schreiben.
 	 * 
 	 * @param view
-	 *            Schaltfläche des Dialogs.
+	 *            SchaltflÃ¤che des Dialogs.
 	 */
 	public void onClickButtonGewichtHinzufuegen(View view) {
-		// Als erstes wird geprüft, ob die beiden Eingabefelder gefüllt sind.
+		// Als erstes wird geprÃ¼ft, ob die beiden Eingabefelder gefÃ¼llt sind.
 		if (editTextDatum.getText().toString().trim().equals("") || editTextGewicht.getText().toString().trim().equals("")) {
 			showDialog(DATA_DIALOG_ID);
 			return;
@@ -410,7 +410,7 @@ public class GewichtEingebenActivity extends Activity {
 		} else {
 			float berechneterBMI = bmiRechner.berechneBMIAsFlaot(Float.parseFloat(tmpStringValue), bmiRechner.getKoerpergroesse());
 			textViewBmi.setText(view.getContext().getString(R.string.ihrBMI) + ": " + BMIRechner.DECIMAL_FORMAT.format(berechneterBMI));
-			// Den richtigen BMIBereich für das Alter und Geschlecht suchen
+			// Den richtigen BMIBereich fÃ¼r das Alter und Geschlecht suchen
 			BMIBereich bmiBereich = null;
 			if (bmiRechner.getGeschlecht().equals("maennlich")) {
 				for (BMIBereich currentBMIBereich : BMIRechner.maennerBMIBereiche) {
@@ -471,7 +471,7 @@ public class GewichtEingebenActivity extends Activity {
 				}
 
 			} catch (Exception e) {
-				Log.e(TAG, "Fehler beim Einfügen in die Datenbank.", e);
+				Log.e(TAG, "Fehler beim EinfÃ¼gen in die Datenbank.", e);
 			} finally {
 				cursor.close();
 				bmiSpitzelDatenbank.close();
@@ -480,8 +480,8 @@ public class GewichtEingebenActivity extends Activity {
 	}
 
 	/**
-	 * Diese Methode liefert (abhängig von der Einstellung in den Preferences), den eingegeben Fettanteil zurück. Wenn die Eingabe ungültig ist, wird -1
-	 * zurückgegeben.
+	 * Diese Methode liefert (abhÃ¤ngig von der Einstellung in den Preferences), den eingegeben Fettanteil zurÃ¼ck. Wenn die Eingabe ungÃ¼ltig ist, wird -1
+	 * zurÃ¼ckgegeben.
 	 * 
 	 * @return Den vom Benutzer eingegeben Fettanteil, oder -1 als Default-Wert-
 	 */
@@ -505,8 +505,8 @@ public class GewichtEingebenActivity extends Activity {
 	}
 
 	/**
-	 * Diese Methode liefert (abhängig von der Einstellung in den Preferences), den eingegeben Wasseranteil zurück. Wenn die Eingabe ungültig ist, wird -1
-	 * zurückgegeben.
+	 * Diese Methode liefert (abhÃ¤ngig von der Einstellung in den Preferences), den eingegeben Wasseranteil zurÃ¼ck. Wenn die Eingabe ungÃ¼ltig ist, wird -1
+	 * zurÃ¼ckgegeben.
 	 * 
 	 * @return Den vom Benutzer eingegeben Wasseranteil, oder -1 als Default-Wert-
 	 */
@@ -531,8 +531,8 @@ public class GewichtEingebenActivity extends Activity {
 	}
 
 	/**
-	 * Diese Methode liefert (abhängig von der Einstellung in den Preferences), den eingegeben Muskelanteil zurück. Wenn die Eingabe ungültig ist, wird -1
-	 * zurückgegeben.
+	 * Diese Methode liefert (abhÃ¤ngig von der Einstellung in den Preferences), den eingegeben Muskelanteil zurÃ¼ck. Wenn die Eingabe ungÃ¼ltig ist, wird -1
+	 * zurÃ¼ckgegeben.
 	 * 
 	 * @return Den vom Benutzer eingegeben Muskelanteil, oder -1 als Default-Wert-
 	 */
@@ -556,16 +556,16 @@ public class GewichtEingebenActivity extends Activity {
 	}
 
 	/**
-	 * Methode um bei einem Click auf den Zurück-Button in der Titlebar.
+	 * Methode um bei einem Click auf den ZurÃ¼ck-Button in der Titlebar.
 	 * 
 	 * @param view
-	 *            Button der gedrückt wurde.
+	 *            Button der gedrÃ¼ckt wurde.
 	 */
 	public void onClickButtonBackTitlebar(View view) {
 		try {
 			finish();
 		} catch (Exception e) {
-			Log.e(TAG, "Fehler beim Zurück-Button in der Title Bar.", e);
+			Log.e(TAG, "Fehler beim ZurÃ¼ck-Button in der Title Bar.", e);
 		}
 	}
 }

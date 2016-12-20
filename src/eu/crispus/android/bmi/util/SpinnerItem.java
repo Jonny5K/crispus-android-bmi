@@ -14,7 +14,7 @@ public class SpinnerItem {
 	private final String value;
 	
 	/**
-	 * Label der für einen Eintrag angezeigt werden soll.
+	 * Label der fÃ¼r einen Eintrag angezeigt werden soll.
 	 */
 	private final String label;
 

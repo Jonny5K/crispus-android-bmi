@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * Kleine Hilfsklasse (eine kleines DAO-Objekt) um einfacher auf die Datenbank
- * zugreifen zu können.
+ * zugreifen zu kÃ¶nnen.
  * 
  * @author Johannes Kraus
  * @version 1.0

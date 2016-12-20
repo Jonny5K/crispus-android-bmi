@@ -23,15 +23,15 @@ public class TextWatcherNurEinKommaOderPunkt implements TextWatcher {
 	private String oldString;
 
 	/**
-	 * Edittext, an dem dieser TextWatche h‰ngt.
+	 * Edittext, an dem dieser TextWatche h√§ngt.
 	 */
 	private final EditText editTextObject;
 
 	/**
-	 * Konstruktor dem das EditText Widget ¸bergeben werden muss, an welchem der Textwatcher h‰ngt.
+	 * Konstruktor dem das EditText Widget √ºbergeben werden muss, an welchem der Textwatcher h√§ngt.
 	 * 
 	 * @param editTextObject
-	 *            EditText, an welchem der Textwatcher h‰ngt.
+	 *            EditText, an welchem der Textwatcher h√§ngt.
 	 */
 	public TextWatcherNurEinKommaOderPunkt(EditText editTextObject) {
 		this.editTextObject = editTextObject;

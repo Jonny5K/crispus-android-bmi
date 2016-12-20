@@ -26,17 +26,17 @@ public class BMISpitzelDatenbank extends SQLiteOpenHelper {
 	private static final String TAG = "BMISpitzelDatenbank";
 
 	/**
-	 * Name der Datenbank für den BMI-Spitzel.
+	 * Name der Datenbank fÃ¼r den BMI-Spitzel.
 	 */
 	private static final String DATENBANK_NAME = "bmi_spitzel.db";
 
 	/**
-	 * Version der Datenbank für den BMI-Spitzel.
+	 * Version der Datenbank fÃ¼r den BMI-Spitzel.
 	 */
 	private static final int DATENBANK_VERSION = 2;
 
 	/**
-	 * Überschriebener C'tor, in dem die Datenbank-Angaben übergeben werden.
+	 * Ãœberschriebener C'tor, in dem die Datenbank-Angaben Ã¼bergeben werden.
 	 * 
 	 * @param context
 	 */
@@ -50,9 +50,9 @@ public class BMISpitzelDatenbank extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		try {
-			// Datenbank-Tabelle für Gewicht und Datum anlegen.
+			// Datenbank-Tabelle fÃ¼r Gewicht und Datum anlegen.
 			db.execSQL(DatumGewichtTable.SQL_CREATE);
-			// Erstes DB-Update für Fett-, Wasser- und Muskelanteil einspielen.
+			// Erstes DB-Update fÃ¼r Fett-, Wasser- und Muskelanteil einspielen.
 			db.execSQL(DatumGewichtTable.SQL_ALTER_TABLE_UPDATE_FETTANTEIL);
 			db.execSQL(DatumGewichtTable.SQL_ALTER_TABLE_UPDATE_WASSERANTEIL);
 			db.execSQL(DatumGewichtTable.SQL_ALTER_TABLE_UPDATE_MUSKELANTEIL);
@@ -98,7 +98,7 @@ public class BMISpitzelDatenbank extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * Liefert das kleinste Gewicht, das bis zu dem übergebenen Datum eingegeben wurde.
+	 * Liefert das kleinste Gewicht, das bis zu dem Ã¼bergebenen Datum eingegeben wurde.
 	 * 
 	 * @return Kleinste Gewicht.
 	 */
@@ -149,7 +149,7 @@ public class BMISpitzelDatenbank extends SQLiteOpenHelper {
 				}
 			}
 		} catch (Exception e) {
-			Log.e(TAG, "Es ist ein Fehler beim ermitteln der Einträge aufgetreten. Der angegebene Zeitraum war: " + zeitAuswahlEnum, e);
+			Log.e(TAG, "Es ist ein Fehler beim ermitteln der EintrÃ¤ge aufgetreten. Der angegebene Zeitraum war: " + zeitAuswahlEnum, e);
 		} finally {
 			if (cursor != null) {
 				cursor.close();

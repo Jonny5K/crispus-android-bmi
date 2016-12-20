@@ -1,56 +1,56 @@
 package eu.crispus.android.bmi.util;
 
 /**
- * Klasse um unterschiedliche BMI-Bereiche zu entsprenden Altern speichern zu können.
+ * Klasse um unterschiedliche BMI-Bereiche zu entsprenden Altern speichern zu kÃ¶nnen.
  * BMI-Bereich 1: Sie sind untergewichtig
  * BMI-Bereich 2: Sie haben Ihr Normalgewicht
- * BMI-Bereich 3: Sie sind etwas übergewichtig
- * BMI-Bereich 4: Sie sind übergewichtig
- * BMI-Bereich 5: Sie haben erhebliches Übergewicht
+ * BMI-Bereich 3: Sie sind etwas Ã¼bergewichtig
+ * BMI-Bereich 4: Sie sind Ã¼bergewichtig
+ * BMI-Bereich 5: Sie haben erhebliches Ãœbergewicht
  * 
  * @author Johannes Kraus
  * @version 1.0
  */
 public class BMIBereich {
 	/**
-	 * Bereich für das Alter.
+	 * Bereich fÃ¼r das Alter.
 	 */
 	private Bereich alter;
 	
 	/**
-	 * BMI-Bereich für untergewicht.
+	 * BMI-Bereich fÃ¼r untergewicht.
 	 */
 	private Bereich bereich1;
 	
 	/**
-	 * BMI-Bereich für Normalgewicht.
+	 * BMI-Bereich fÃ¼r Normalgewicht.
 	 */
 	private Bereich bereich2;
 	
 	/**
-	 * BMI-Bereich für etwas übergewichtig.
+	 * BMI-Bereich fÃ¼r etwas Ã¼bergewichtig.
 	 */
 	private Bereich bereich3;
 
 	/**
-	 * BMI-Bereich für übergewichtig.
+	 * BMI-Bereich fÃ¼r Ã¼bergewichtig.
 	 */
 	private Bereich bereich4;
 	
 	/**
-	 * BMI-Bereich für erhebliches Übergewicht.
+	 * BMI-Bereich fÃ¼r erhebliches Ãœbergewicht.
 	 */
 	private Bereich bereich5;
 
 	/**
 	 * Konstruktor um alle Felder vor zu belegen.
 	 * 
-	 * @param alter Bereich für das Alter.
-	 * @param bereich1 BMI-Bereich für untergewicht.
-	 * @param bereich2 BMI-Bereich für Normalgewicht.
-	 * @param bereich3 BMI-Bereich für etwas übergewichtig.
-	 * @param bereich4 BMI-Bereich für übergewichtig.
-	 * @param bereich5 BMI-Bereich für erhebliches Übergewicht.
+	 * @param alter Bereich fÃ¼r das Alter.
+	 * @param bereich1 BMI-Bereich fÃ¼r untergewicht.
+	 * @param bereich2 BMI-Bereich fÃ¼r Normalgewicht.
+	 * @param bereich3 BMI-Bereich fÃ¼r etwas Ã¼bergewichtig.
+	 * @param bereich4 BMI-Bereich fÃ¼r Ã¼bergewichtig.
+	 * @param bereich5 BMI-Bereich fÃ¼r erhebliches Ãœbergewicht.
 	 */
 	public BMIBereich(Bereich alter, Bereich bereich1, Bereich bereich2, Bereich bereich3, Bereich bereich4, Bereich bereich5) {
 		super();

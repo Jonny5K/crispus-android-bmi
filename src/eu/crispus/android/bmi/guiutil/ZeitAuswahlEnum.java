@@ -3,7 +3,7 @@ package eu.crispus.android.bmi.guiutil;
 import android.util.Log;
 
 /**
- * Kleiner Enum um die Skalierung der Zeit besser Steuern zu können.
+ * Kleiner Enum um die Skalierung der Zeit besser Steuern zu kÃ¶nnen.
  * 
  * @author Johannes Kraus
  * @version 1.0
@@ -17,7 +17,7 @@ public enum ZeitAuswahlEnum {
 	private static final String TAG = "ZeitAuswahlEnum";
 	
 	/**
-	 * Gibt den Zeitwert an, wieviele Tage an Einträgen angezeigt werden sollen.
+	 * Gibt den Zeitwert an, wieviele Tage an EintrÃ¤gen angezeigt werden sollen.
 	 */
 	private final int daysOfYear;
 	
@@ -40,11 +40,11 @@ public enum ZeitAuswahlEnum {
 	}
 	
 	/**
-	 * Diese Methode gibt für einen Angegebenen Zeitraum den richtigen ZeitAuswahlEnum-Wert zurück.
-	 * Wenn für die angegebene Anzahl an Tagen kein Wert vorhanden ist, wird WOCHE zurückgegeben.
+	 * Diese Methode gibt fÃ¼r einen Angegebenen Zeitraum den richtigen ZeitAuswahlEnum-Wert zurÃ¼ck.
+	 * Wenn fÃ¼r die angegebene Anzahl an Tagen kein Wert vorhanden ist, wird WOCHE zurÃ¼ckgegeben.
 	 * 
-	 * @param dayCount Anzahl an Tagen, für die ein ZeitAuswahlEnum-Wert gesucht ist.
-	 * @return Liefert einen ZeitAuswahlEnum-Wert zurück.
+	 * @param dayCount Anzahl an Tagen, fÃ¼r die ein ZeitAuswahlEnum-Wert gesucht ist.
+	 * @return Liefert einen ZeitAuswahlEnum-Wert zurÃ¼ck.
 	 */
 	public static ZeitAuswahlEnum getZeitAuswahlEnumByDayCount(int dayCount) {
 		try {
@@ -54,7 +54,7 @@ public enum ZeitAuswahlEnum {
 				}
 			}
 		} catch (Exception e) {
-			Log.e(TAG, "Fehler beim ermitteln der Zeitauswahl. Übergebener Wert: " + dayCount, e);
+			Log.e(TAG, "Fehler beim ermitteln der Zeitauswahl. Ãœbergebener Wert: " + dayCount, e);
 		}
 		
 		return ZeitAuswahlEnum.WOCHE;

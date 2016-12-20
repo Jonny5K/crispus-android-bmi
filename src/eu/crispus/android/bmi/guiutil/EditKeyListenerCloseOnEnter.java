@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 /**
- * Einfacher EditKexListener der die Tastertur eines Elements schließt, wenn die Entertaste gedrückt wurde.
+ * Einfacher EditKexListener der die Tastertur eines Elements schlieÃŸt, wenn die Entertaste gedrÃ¼ckt wurde.
  * 
  * @author Johannes Kraus
  * @version 1.0
@@ -14,11 +14,11 @@ import android.view.inputmethod.InputMethodManager;
 public class EditKeyListenerCloseOnEnter implements View.OnKeyListener {
 	
 	/**
-	 * Schließt die Tastatur, wenn Enter gedrückt wurde.
+	 * SchlieÃŸt die Tastatur, wenn Enter gedrÃ¼ckt wurde.
 	 * 
 	 * @param view View die verarbeitet wird.
-	 * @param keyCode Key-Code der gedrückten Taste.
-	 * @param event Ausgelöstes Event-Objekt.
+	 * @param keyCode Key-Code der gedrÃ¼ckten Taste.
+	 * @param event AusgelÃ¶stes Event-Objekt.
 	 * @return true, wenn das Ereigniss bearbeitet wurde, ansonsten false.
 	 */
 	@Override

@@ -28,8 +28,8 @@ import eu.crispus.android.bmi.util.BMIBereich;
 import eu.crispus.android.bmi.util.Bereich;
 
 /**
- * Mit dieser Activity soll der BMI direkt berechnet werden können. Auf der Seite kann das Gewicht, das Alter und die Größe direkt eingegeben werden. Falls
- * Alter und Größe bereits in den Einstellungen hinterlegt sind, werden diese Daten als Vorgabe geladen. Es soll ein Hinweis zu dem BMI erscheinen, und auch die
+ * Mit dieser Activity soll der BMI direkt berechnet werden kÃ¶nnen. Auf der Seite kann das Gewicht, das Alter und die GrÃ¶ÃŸe direkt eingegeben werden. Falls
+ * Alter und GrÃ¶ÃŸe bereits in den Einstellungen hinterlegt sind, werden diese Daten als Vorgabe geladen. Es soll ein Hinweis zu dem BMI erscheinen, und auch die
  * Angabe wie viel man event. noch abnehmen oder zunehmen muss, um auf einen "guten" BMI-Wert zu kommen. 
  * 
  * @author Johannes Kraus
@@ -43,32 +43,32 @@ public class BMIBerechnenActivity extends Activity {
 	private static final String TAG = "BMIBerechnenActivity";
 
 	/**
-	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachträglich verbessert werden kann.
+	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachtrÃ¤glich verbessert werden kann.
 	 */
 	private EditText editTextAlter;
 
 	/**
-	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachträglich verbessert werden kann.
+	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachtrÃ¤glich verbessert werden kann.
 	 */
 	private EditText editTextGewicht;
 
 	/**
-	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachträglich verbessert werden kann.
+	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachtrÃ¤glich verbessert werden kann.
 	 */
 	private EditText editTextGroesse;
 
 	/**
-	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachträglich ausgelesen werden kann.
+	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachtrÃ¤glich ausgelesen werden kann.
 	 */
 	private RadioButton radioButtonMaennlich;
 
 	/**
-	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachträglich ausgelesen werden kann.
+	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachtrÃ¤glich ausgelesen werden kann.
 	 */
 	private RadioButton radioButtonWeiblich;
 	
 	/**
-	 * Hier wird eine Referenz auf das Ausgabefeld für den BMI-Wert gespeichert.
+	 * Hier wird eine Referenz auf das Ausgabefeld fÃ¼r den BMI-Wert gespeichert.
 	 */
 	private TextView textViewBmiBerechnenAusgabeBmi;
 	
@@ -130,8 +130,8 @@ public class BMIBerechnenActivity extends Activity {
 
 	/**
 	 * Die onResume-Methode wird aufgerufen, wenn die View "wieder" angezeigt wird, ohne dass Sie vorher beendet wurde. Falls aus dem Dialog in die Prefenreces
-	 * gesprungen wird müssen die Texte gegebenfalls wieder angepasst werden. Einfacher Trick um die Sprache der App anzupassen. Wenn in den Einstellungen die
-	 * Schriftart geändert wurde, wird der Bildschirm einmal gedreht, dadurch wird die App neu gezeichnet.
+	 * gesprungen wird mÃ¼ssen die Texte gegebenfalls wieder angepasst werden. Einfacher Trick um die Sprache der App anzupassen. Wenn in den Einstellungen die
+	 * Schriftart geÃ¤ndert wurde, wird der Bildschirm einmal gedreht, dadurch wird die App neu gezeichnet.
 	 */
 	@Override
 	protected void onResume() {
@@ -151,7 +151,7 @@ public class BMIBerechnenActivity extends Activity {
 		((TextView) findViewById(R.id.bmiBerechnenInfoStarkAdipositas)).setText(R.string.bmiBerechnenInfoStarkAdipositas);
 		
 		if ("imperial".equals(Einstellungen.getAnwendungsEinstellungen(getBaseContext()).getString(Einstellungen.KEY_EINHEITENSYSTEM, Einstellungen.NONE))) {
-			// Hier werden die Texte für die Oberfläche vom metrischen Einheitensystem auf das Imperiale Einheitensystem gesetzt.
+			// Hier werden die Texte fÃ¼r die OberflÃ¤che vom metrischen Einheitensystem auf das Imperiale Einheitensystem gesetzt.
 			TextView tmpTextView = (TextView) findViewById(R.id.textViewGewicht);
 			tmpTextView.setText(tmpTextView.getText().toString().replaceAll("kg", getString(R.string.pfundKurztext)));
 			tmpTextView = (TextView) findViewById(R.id.textViewGroesse);
@@ -165,14 +165,14 @@ public class BMIBerechnenActivity extends Activity {
 	}
 
 	/**
-	 * Methode um bei einem Click auf einen RadioButton alle Tastaturfelder zu löschen (verbergen).
+	 * Methode um bei einem Click auf einen RadioButton alle Tastaturfelder zu lÃ¶schen (verbergen).
 	 * 
 	 * @param view
-	 *            RadioButton der gedrückt wurde.
+	 *            RadioButton der gedrÃ¼ckt wurde.
 	 */
 	public void onClickRadioButtonDeleteKeyboard(View view) {
 		try {
-			// Löschen der Tastatur Eingabefelder.
+			// LÃ¶schen der Tastatur Eingabefelder.
 			if (editTextAlter.hasFocus()) {
 				InputMethodManager inputMethodManager = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
 				inputMethodManager.hideSoftInputFromWindow(editTextAlter.getWindowToken(), 0);
@@ -189,7 +189,7 @@ public class BMIBerechnenActivity extends Activity {
 				editTextGewicht.requestFocus();
 			}
 		} catch (Exception e) {
-			Log.e(TAG, "Fehler beim löschen der Tastatur.", e);
+			Log.e(TAG, "Fehler beim lÃ¶schen der Tastatur.", e);
 		}
 	}
 
@@ -203,9 +203,9 @@ public class BMIBerechnenActivity extends Activity {
 			findViewById(R.id.bmiBerechnenInformationsLayout).setVisibility(View.GONE);
 			if (editTextAlter.getText().toString().trim().equals("") || editTextGroesse.getText().toString().trim().equals("")
 					|| editTextGewicht.getText().toString().trim().equals("") || (!radioButtonMaennlich.isChecked() && !radioButtonWeiblich.isChecked())) {
-				// Erst prüfen ob überhaupt etwas eingegeben wurde
+				// Erst prÃ¼fen ob Ã¼berhaupt etwas eingegeben wurde
 				Toast.makeText(this.getBaseContext(), getString(R.string.bmiBerechnenActivityHinweisEingabenFehlen),
-				// "Sie habe noch nicht alle Einstellungen vorgenommen. Bitte beachten Sie, dass für die Berechnung des BMI das Alter, Geschlecht, Gewicht und die Körpergröße benötigt werden.",
+				// "Sie habe noch nicht alle Einstellungen vorgenommen. Bitte beachten Sie, dass fÃ¼r die Berechnung des BMI das Alter, Geschlecht, Gewicht und die KÃ¶rpergrÃ¶ÃŸe benÃ¶tigt werden.",
 						Toast.LENGTH_LONG).show();
 				if (editTextGewicht.getText().toString().trim().equals("")) {
 					editTextGewicht.requestFocus();
@@ -220,16 +220,16 @@ public class BMIBerechnenActivity extends Activity {
 			}
 			int alter = Integer.parseInt(editTextAlter.getText().toString());
 			if ((alter <= 17) || (alter > 150)) {
-				// Prüfen des Alter auf einen gültigen Wert
-				Toast.makeText(this.getBaseContext(), getString(R.string.bmiBerechnenActivityHinweisAlterUngueltig), // "Das Alter hat einen ungültigen Wert. Bitte geben Sie eine Zahl zwischen 18 und 150 Jahren ein.",
+				// PrÃ¼fen des Alter auf einen gÃ¼ltigen Wert
+				Toast.makeText(this.getBaseContext(), getString(R.string.bmiBerechnenActivityHinweisAlterUngueltig), // "Das Alter hat einen ungÃ¼ltigen Wert. Bitte geben Sie eine Zahl zwischen 18 und 150 Jahren ein.",
 						Toast.LENGTH_LONG).show();
 				editTextAlter.requestFocus();
 				return;
 			}
 			int groesse = Integer.parseInt(editTextGroesse.getText().toString());
 			if ((groesse <= 19) || (groesse > 300)) {
-				// Prüfen des Alter auf einen gültigen Wert
-				Toast.makeText(this.getBaseContext(), getString(R.string.bmiBerechnenActivityHinweisGroesseUngueltig), // "Die Größe hat einen ungültigen Wert. Bitte geben Sie eine Zahl zwischen 20cm und 300cm ein.",
+				// PrÃ¼fen des Alter auf einen gÃ¼ltigen Wert
+				Toast.makeText(this.getBaseContext(), getString(R.string.bmiBerechnenActivityHinweisGroesseUngueltig), // "Die GrÃ¶ÃŸe hat einen ungÃ¼ltigen Wert. Bitte geben Sie eine Zahl zwischen 20cm und 300cm ein.",
 						Toast.LENGTH_LONG).show();
 				editTextGroesse.requestFocus();
 				return;
@@ -253,8 +253,8 @@ public class BMIBerechnenActivity extends Activity {
 				gewicht = -1;// Falsches Gewicht.
 			}
 			if ((gewicht <= 2) || (gewicht > 450)) {
-				// Prüfen des Alter auf einen gültigen Wert
-				Toast.makeText(this.getBaseContext(), getString(R.string.bmiBerechnenActivityHinweisGewichtUngueltig), // "Das Gewicht hat einen ungültigen Wert. Bitte geben Sie eine Zahl zwischen 3kg und 450kg ein.",
+				// PrÃ¼fen des Alter auf einen gÃ¼ltigen Wert
+				Toast.makeText(this.getBaseContext(), getString(R.string.bmiBerechnenActivityHinweisGewichtUngueltig), // "Das Gewicht hat einen ungÃ¼ltigen Wert. Bitte geben Sie eine Zahl zwischen 3kg und 450kg ein.",
 						Toast.LENGTH_LONG).show();
 				editTextGewicht.requestFocus();
 				return;
@@ -268,7 +268,7 @@ public class BMIBerechnenActivity extends Activity {
 			float berechneterBMI = bmiRechner.berechneBMIAsFlaot(gewicht, groesse);
 			textViewBmiBerechnenAusgabeBmi.setText(view.getContext().getString(R.string.ihrBMI) + ": " + BMIRechner.DECIMAL_FORMAT.format(berechneterBMI));
 
-			// Den richtigen BMIBereich für das Alter und Geschlecht suchen
+			// Den richtigen BMIBereich fÃ¼r das Alter und Geschlecht suchen
 			BMIBereich bmiBereich = null;
 			if (radioButtonMaennlich.isChecked()) {
 				for (BMIBereich currentBMIBereich : BMIRechner.maennerBMIBereiche) {
@@ -286,7 +286,7 @@ public class BMIBerechnenActivity extends Activity {
 				}
 			}
 
-			// Füllen der Informations-Tabelle und den aktuellen Bereich FETT und farblich machen
+			// FÃ¼llen der Informations-Tabelle und den aktuellen Bereich FETT und farblich machen
 			if (setInformationstabelle(bmiBereich.getBereich1(), berechneterBMI, R.id.bmiBerechnenInfoUntergewicht, R.id.bmiBerechnenInfoUntergewichtValue,
 					Color.YELLOW, "< " + bmiBereich.getBereich1().getEndeBereich())) {
 				textViewBmiBerechnenAusgabeBmi.setTextColor(Color.YELLOW);
@@ -308,7 +308,7 @@ public class BMIBerechnenActivity extends Activity {
 				textViewBmiBerechnenAusgabeBmi.setTextColor(Color.RED);
 			}
 
-			// Wenn noch keine Einstellungen vorhanden sind, wird nun noch die Größe und das Geschlecht in die Preferences geschrieben.
+			// Wenn noch keine Einstellungen vorhanden sind, wird nun noch die GrÃ¶ÃŸe und das Geschlecht in die Preferences geschrieben.
 			SharedPreferences sharedPreferences = Einstellungen.getAnwendungsEinstellungen(getBaseContext());
 			String geschlecht = sharedPreferences.getString(Einstellungen.KEY_GESCHLECHT, Einstellungen.NONE);
 			if (Einstellungen.NONE.equals(geschlecht)) {
@@ -334,18 +334,18 @@ public class BMIBerechnenActivity extends Activity {
 	}
 
 	/**
-	 * Füllen der Informations-Tabelle und den aktuellen Bereich FETT und Farblich machen
+	 * FÃ¼llen der Informations-Tabelle und den aktuellen Bereich FETT und Farblich machen
 	 * 
 	 * @param bmiBereich
-	 *            Aktueller BMI-Bereich (z.B. Untergewicht), für das angegebene Alter.
+	 *            Aktueller BMI-Bereich (z.B. Untergewicht), fÃ¼r das angegebene Alter.
 	 * @param berechneterBMI
-	 *            Berechneter BMI-Wert, wird benötigt um zu überprüfen ob der Wert im aktuellen BMI-Bereich liegt.
+	 *            Berechneter BMI-Wert, wird benÃ¶tigt um zu Ã¼berprÃ¼fen ob der Wert im aktuellen BMI-Bereich liegt.
 	 * @param bmiBerechnenInfoLabel
-	 *            ID der TextView für den aktuellen BMI-Bereich Label.
+	 *            ID der TextView fÃ¼r den aktuellen BMI-Bereich Label.
 	 * @param bmiBerechnenInfoValue
-	 *            ID der TextView für den aktuellen BMI-Bereich Wert.
+	 *            ID der TextView fÃ¼r den aktuellen BMI-Bereich Wert.
 	 * @param colorCurrent
-	 *            Farbe für die TextViews, falls sie in dem aktuellen BMI-Bereich liegen.
+	 *            Farbe fÃ¼r die TextViews, falls sie in dem aktuellen BMI-Bereich liegen.
 	 * @return true wenn der berechnete BMI innerhalb des aktuellen bmiBereich liegt.
 	 */
 	private boolean setInformationstabelle(Bereich bereich, float berechneterBMI, int bmiBerechnenInfoLabel, int bmiBerechnenInfoValue, int colorCurrent,
@@ -373,7 +373,7 @@ public class BMIBerechnenActivity extends Activity {
 	}
 
 	/**
-	 * In der folgenden Methode wird das Menü (menue_bmi_berechnen.xml) in die BMI-Berechnung-Seite eingebunden.
+	 * In der folgenden Methode wird das MenÃ¼ (menue_bmi_berechnen.xml) in die BMI-Berechnung-Seite eingebunden.
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -382,7 +382,7 @@ public class BMIBerechnenActivity extends Activity {
 	}
 
 	/**
-	 * In der folgenden Methode werden die Menü-Einträge abgearbeitet.
+	 * In der folgenden Methode werden die MenÃ¼-EintrÃ¤ge abgearbeitet.
 	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -411,16 +411,16 @@ public class BMIBerechnenActivity extends Activity {
 	}
 	
 	/**
-	 * Methode um bei einem Click auf den Zurück-Button in der Titlebar.
+	 * Methode um bei einem Click auf den ZurÃ¼ck-Button in der Titlebar.
 	 * 
 	 * @param view
-	 *            Button der gedrückt wurde.
+	 *            Button der gedrÃ¼ckt wurde.
 	 */
 	public void onClickButtonBackTitlebar(View view) {
 		try {
 			finish();
 		} catch (Exception e) {
-			Log.e(TAG, "Fehler beim Zurück-Button in der Title Bar.", e);
+			Log.e(TAG, "Fehler beim ZurÃ¼ck-Button in der Title Bar.", e);
 		}
 	}
 }

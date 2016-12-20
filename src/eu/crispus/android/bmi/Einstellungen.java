@@ -32,32 +32,32 @@ public class Einstellungen extends PreferenceActivity implements SharedPreferenc
 
 	/**
 	 * Einfache Stringkonstante um beim auslesen der Preferences einen Default-Wert zu haben. Wenn nichts in den Preferences steht, sollte dieser Wert
-	 * zurückgegeben werden.
+	 * zurÃ¼ckgegeben werden.
 	 */
 	public static final String NONE = "NONE";
 
 	/**
-	 * Key um auf die Körpergröße in den Einstellungen zugreifen zu können.
+	 * Key um auf die KÃ¶rpergrÃ¶ÃŸe in den Einstellungen zugreifen zu kÃ¶nnen.
 	 */
 	public static final String KEY_KOERPERGROESSE = "groesse";
 
 	/**
-	 * Key um auf das Geschlecht in den Einstellungen zugreifen zu können.
+	 * Key um auf das Geschlecht in den Einstellungen zugreifen zu kÃ¶nnen.
 	 */
 	public static final String KEY_GESCHLECHT = "geschlecht";
 
 	/**
-	 * Key um auf den Geburtstag in den Einstellungen zugreifen zu können.
+	 * Key um auf den Geburtstag in den Einstellungen zugreifen zu kÃ¶nnen.
 	 */
 	public static final String KEY_GEBURTSTAG = "geburtstag";
 
 	/**
-	 * Key um auf die Sprache in den Einstellungen zugreifen zu können.
+	 * Key um auf die Sprache in den Einstellungen zugreifen zu kÃ¶nnen.
 	 */
 	public static final String KEY_SPRACHE = "sprache";
 
 	/**
-	 * Key um auf das Einheiten-System (CM und KG oder Zoll und Pfund) in den Einstellungen zugreifen zu können.
+	 * Key um auf das Einheiten-System (CM und KG oder Zoll und Pfund) in den Einstellungen zugreifen zu kÃ¶nnen.
 	 */
 	public static final String KEY_EINHEITENSYSTEM = "einheitensystem";
 
@@ -82,7 +82,7 @@ public class Einstellungen extends PreferenceActivity implements SharedPreferenc
 	public static final String KEY_MUSKELANTEIL = "muskelanteil";
 	
 	/**
-	 * Key um auf die Anzahl der anzuzeigenden Einträge in der GewichtBearbeitenActivity zu speichern.
+	 * Key um auf die Anzahl der anzuzeigenden EintrÃ¤ge in der GewichtBearbeitenActivity zu speichern.
 	 * Dieser Wert wird nur in der entsprechenden Activity gespeichert und verwaltet, hier wird nur der
 	 * Preferences-Key gespeichert.
 	 */
@@ -104,7 +104,7 @@ public class Einstellungen extends PreferenceActivity implements SharedPreferenc
 	public static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("yyy.MM.dd");
 
 	/**
-	 * Liste von List-Preference, wo der ausgewählte Wert anstatt eines Standardsatzes angezeigt werden soll.
+	 * Liste von List-Preference, wo der ausgewÃ¤hlte Wert anstatt eines Standardsatzes angezeigt werden soll.
 	 */
 	private final String[] listPreferencesKeys = new String[] { KEY_GESCHLECHT, KEY_ZEITAUSWAHL, KEY_SPRACHE, KEY_EINHEITENSYSTEM, KEY_AMPUTATION, KEY_WEITERE_AMPUTATION };
 
@@ -114,7 +114,7 @@ public class Einstellungen extends PreferenceActivity implements SharedPreferenc
 	private ArrayList<ListPreference> listPreferences;
 
 	/**
-	 * Liste von EditText-Preferences, wo der ausgewählte Wert anstatt eines Standardsatzes angezeigt werden soll.
+	 * Liste von EditText-Preferences, wo der ausgewÃ¤hlte Wert anstatt eines Standardsatzes angezeigt werden soll.
 	 */
 	private final String[] editTextPreferencesKeys = new String[] { KEY_KOERPERGROESSE };
 
@@ -150,13 +150,13 @@ public class Einstellungen extends PreferenceActivity implements SharedPreferenc
 				onSharedPreferenceChanged(sharedPrefs, prefKey);
 			}
 
-			// Change Listener für Sprache und Einheitensystem
+			// Change Listener fÃ¼r Sprache und Einheitensystem
 			ListPreference tmpListPreferencePreference = (ListPreference) findPreference(KEY_EINHEITENSYSTEM);
 			tmpListPreferencePreference.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
 				@Override
 				public boolean onPreferenceChange(Preference preference, Object newValue) {
 					if ("imperial".equals(newValue.toString())) {
-						// Hier werden die Texte für die Oberfläche vom metrischen Einheitensystem auf das Imperiale Einheitensystem gesetzt.
+						// Hier werden die Texte fÃ¼r die OberflÃ¤che vom metrischen Einheitensystem auf das Imperiale Einheitensystem gesetzt.
 						EditTextPreference tmpEditTextPreference = (EditTextPreference) findPreference(KEY_KOERPERGROESSE);// (R.id.preferenceGroesse);
 						tmpEditTextPreference.setSummary(tmpEditTextPreference.getSummary().toString().replaceAll("cm", getString(R.string.inchText)));
 					} else {
@@ -230,7 +230,7 @@ public class Einstellungen extends PreferenceActivity implements SharedPreferenc
 	}
 	
 	/**
-	 * Kleine Hilfsmethode, damit die Preferences aus jeder Activity der APP einfach geladen werden können.
+	 * Kleine Hilfsmethode, damit die Preferences aus jeder Activity der APP einfach geladen werden kÃ¶nnen.
 	 * 
 	 * @param context
 	 *            Wird verwendet, um den Packagenamen zu erhalten.
@@ -266,7 +266,7 @@ public class Einstellungen extends PreferenceActivity implements SharedPreferenc
 						tmpPreference.setSummary(tmpPreference.getText());
 					}
 				} else if (tmpPreference.getKey().equals(prefKey)) {
-					// Standard Summary Text setzen. Wir nur bei EditTextPreferences benötigt, da diese gelöscht werden können.
+					// Standard Summary Text setzen. Wir nur bei EditTextPreferences benÃ¶tigt, da diese gelÃ¶scht werden kÃ¶nnen.
 					if (prefKey.equals(KEY_KOERPERGROESSE)) {
 						tmpPreference.setSummary(R.string.preferenceGroesseSummary);
 					} else {
@@ -291,10 +291,10 @@ public class Einstellungen extends PreferenceActivity implements SharedPreferenc
 	}
 	
 	/**
-	 * Diese Methode überprüft welche Einstellung in den Preferences vorhanden sind und welche Sprache auf einem Handy eingestellt sind. Abhängig davon wird
-	 * dann die aktuelle Sprache für den übergebenen Context gesetz.
+	 * Diese Methode Ã¼berprÃ¼ft welche Einstellung in den Preferences vorhanden sind und welche Sprache auf einem Handy eingestellt sind. AbhÃ¤ngig davon wird
+	 * dann die aktuelle Sprache fÃ¼r den Ã¼bergebenen Context gesetz.
 	 *
-	 * @param context Kontext für den die Sprache geladen werden soll.
+	 * @param context Kontext fÃ¼r den die Sprache geladen werden soll.
 	 */
 	public static void loadLocalInformation(Context context) {
 		SharedPreferences sharedPreferences = Einstellungen.getAnwendungsEinstellungen(context);
@@ -327,16 +327,16 @@ public class Einstellungen extends PreferenceActivity implements SharedPreferenc
 	}
 
 	/**
-	 * Methode um bei einem Click auf den Zurück-Button in der Titlebar.
+	 * Methode um bei einem Click auf den ZurÃ¼ck-Button in der Titlebar.
 	 * 
 	 * @param view
-	 *            Button der gedrückt wurde.
+	 *            Button der gedrÃ¼ckt wurde.
 	 */
 	public void onClickButtonBackTitlebar(View view) {
 		try {
 			finish();
 		} catch (Exception e) {
-			Log.e(TAG, "Fehler beim schließen der App.", e);
+			Log.e(TAG, "Fehler beim schlieÃŸen der App.", e);
 		}
 	}
 }

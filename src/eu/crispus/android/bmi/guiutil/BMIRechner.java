@@ -12,8 +12,8 @@ import eu.crispus.android.bmi.util.BMIBereich;
 import eu.crispus.android.bmi.util.Bereich;
 
 /**
- * Diese Klasse ist zum Berechnen des BMI zuständig. Beim erzeugen dieser Klasse muss ein Context übergeben werden. Mit dem Context lädt sich der BMIRechner die
- * Daten aus den Einstellungen (Größe, Alter etc).
+ * Diese Klasse ist zum Berechnen des BMI zustÃ¤ndig. Beim erzeugen dieser Klasse muss ein Context Ã¼bergeben werden. Mit dem Context lÃ¤dt sich der BMIRechner die
+ * Daten aus den Einstellungen (GrÃ¶ÃŸe, Alter etc).
  * 
  * @author Johannes Kraus
  * @version 1.0
@@ -26,7 +26,7 @@ public class BMIRechner {
 	private static final String TAG = "BMIRechner";
 
 	/**
-	 * BMI-Bereiche für Frauen (nach Alter).
+	 * BMI-Bereiche fÃ¼r Frauen (nach Alter).
 	 */
 	public final static BMIBereich[] frauenBMIBereiche = {
 			new BMIBereich(new Bereich(-150, 24), new Bereich(0, 19), new Bereich(19, 24), new Bereich(24, 29), new Bereich(29, 39), new Bereich(39, 100)),
@@ -37,7 +37,7 @@ public class BMIRechner {
 			new BMIBereich(new Bereich(65, 150), new Bereich(0, 24), new Bereich(24, 29), new Bereich(29, 34), new Bereich(34, 44), new Bereich(44, 100)), };
 
 	/**
-	 * BMI-Bereiche für Männer (nach Alter).
+	 * BMI-Bereiche fÃ¼r MÃ¤nner (nach Alter).
 	 */
 	public final static BMIBereich[] maennerBMIBereiche = {
 			new BMIBereich(new Bereich(-150, 24), new Bereich(0, 20), new Bereich(20, 25), new Bereich(25, 30), new Bereich(30, 40), new Bereich(40, 100)),
@@ -53,7 +53,7 @@ public class BMIRechner {
 	private final Context context;
 
 	/**
-	 * Decimal-Formater um Zahlen im ganzen Projekt ordentlich ausgeben zu können.
+	 * Decimal-Formater um Zahlen im ganzen Projekt ordentlich ausgeben zu kÃ¶nnen.
 	 */
 	public static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#.00");
 
@@ -68,7 +68,7 @@ public class BMIRechner {
 	public static final float POUND_TO_KG = 0.4536f;
 
 	/**
-	 * Körpergröße aus den Einstellungen der Anwendung.
+	 * KÃ¶rpergrÃ¶ÃŸe aus den Einstellungen der Anwendung.
 	 */
 	private int koerpergroesse;
 
@@ -88,12 +88,12 @@ public class BMIRechner {
 	private String einheitensystem;
 
 	/**
-	 * Gibt an, ob ein Fehler beim Auslesen der Einstellungen aufgetreten ist (z.B. wenn die Angaben nicht vollständig sind).
+	 * Gibt an, ob ein Fehler beim Auslesen der Einstellungen aufgetreten ist (z.B. wenn die Angaben nicht vollstÃ¤ndig sind).
 	 */
 	private boolean errorReadingPreferences;
 
 	/**
-	 * Faktor für die Korrektur bei einer (oder mehreren) Amputation(en).
+	 * Faktor fÃ¼r die Korrektur bei einer (oder mehreren) Amputation(en).
 	 * 
 	 */
 	private float amputationKorrektur = 0;
@@ -141,7 +141,7 @@ public class BMIRechner {
 					}
 				}
 				if (alter < 0) {
-					throw new IllegalArgumentException("Ungültiges Alter: " + alter);
+					throw new IllegalArgumentException("UngÃ¼ltiges Alter: " + alter);
 				}
 			} else {
 				errorReadingPreferences = true;
@@ -155,7 +155,7 @@ public class BMIRechner {
 	}
 
 	/**
-	 * Berechnet den BMI und gibt diesen formatiert mit zwei Nachkommastellen zurück.
+	 * Berechnet den BMI und gibt diesen formatiert mit zwei Nachkommastellen zurÃ¼ck.
 	 * 
 	 * @param gewicht
 	 *            Gewicht von dem der BMI berechnet werden soll.
@@ -178,7 +178,7 @@ public class BMIRechner {
 	}
 
 	/**
-	 * Berechnet den BMI und gibt diesen als Float zurück.
+	 * Berechnet den BMI und gibt diesen als Float zurÃ¼ck.
 	 * 
 	 * @param gewicht
 	 *            Gewicht von dem der BMI berechnet werden soll.
@@ -201,12 +201,12 @@ public class BMIRechner {
 	}
 
 	/**
-	 * Berechnet den BMI und gibt diesen formatiert mit zwei Nachkommastellen zurück. Zudem wird ein Hinweis angefügt, ob der BMI in Ordnung ist.
+	 * Berechnet den BMI und gibt diesen formatiert mit zwei Nachkommastellen zurÃ¼ck. Zudem wird ein Hinweis angefÃ¼gt, ob der BMI in Ordnung ist.
 	 * 
 	 * @param gewicht
 	 *            Gewicht von dem der BMI berechnet werden soll.
 	 * @param context
-	 *            Context der Aufrufenden View, wird benötigt um auf die Strings aus der Datei string.xml zuzugreifen.
+	 *            Context der Aufrufenden View, wird benÃ¶tigt um auf die Strings aus der Datei string.xml zuzugreifen.
 	 * @return Liefert den BMI als String mit einer Wertung.
 	 */
 	public String berechneBMIWithRating(float gewicht, Context context) {
@@ -233,13 +233,13 @@ public class BMIRechner {
 	 * @param currentBMI
 	 *            aktuell berechneter BMI.
 	 * @param context
-	 *            Context der Aufrufenden View, wird benötigt um auf die Strings aus der Datei string.xml zuzugreifen.
+	 *            Context der Aufrufenden View, wird benÃ¶tigt um auf die Strings aus der Datei string.xml zuzugreifen.
 	 * @return String der angibt, ob der BMI gut oder eher schlecht ist.
 	 */
 	private final String getRatingFromBmi(double currentBMI, Context context) {
 		try {
 			if ((geschlecht == null) || geschlecht.trim().equals("")) {
-				return context.getString(R.string.bMIRechnerAngabenUnvollstaendig);// "Angaben sind unvollständig (siehe Einstellungen).";
+				return context.getString(R.string.bMIRechnerAngabenUnvollstaendig);// "Angaben sind unvollstÃ¤ndig (siehe Einstellungen).";
 			}
 
 			if (geschlecht.equals("maennlich")) {
@@ -284,13 +284,13 @@ public class BMIRechner {
 	}
 
 	/**
-	 * Berechnet den BMI und gibt diesen als Float zurück. Der BMI wird mit den im Formular eingegeben Daten berechnet, es werden nicht die Daten aus den
+	 * Berechnet den BMI und gibt diesen als Float zurÃ¼ck. Der BMI wird mit den im Formular eingegeben Daten berechnet, es werden nicht die Daten aus den
 	 * Einstellungen genommen (ausser das Einheitensystem).
 	 * 
 	 * @param gewicht
 	 *            Gewicht von dem der BMI berechnet werden soll.
 	 * @param koerpergroesse
-	 *            die für die Berechnung genommen wird.
+	 *            die fÃ¼r die Berechnung genommen wird.
 	 * @return Liefert den BMI als Float.
 	 */
 	public float berechneBMIAsFlaot(float gewicht, int koerpergroesse) {
