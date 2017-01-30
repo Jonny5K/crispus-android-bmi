@@ -117,7 +117,9 @@
 	<string name="bmiSpitzelActivityInfoUeberDialog">Info about Crispus\u00ae BMI-Spy</string>
 	<string name="bmiSpitzelActivityInfoUeberDialogName">Body Maß Index (BMI)-Spy</string>
 	<string name="bmiSpitzelActivityInfoUeberDialogVersion">Version</string>
-	<string name="bmiSpitzelActivityInfoUeberDialogCopyright">Copyright\u00a9 2012 Johannes Kraus. All rights reserved.</string>
+	<string name="bmiSpitzelActivityInfoUeberDialogCopyright">Copyright\u00a9 2017 Johannes Kraus. All rights
+		reserved.
+	</string>
 	<string name="gewichtBearbeitenActivityTitel">Edit Weight</string>
 	<string name="gewichtBearbeitenActivityBitte">Please long press on an item to bring up a menu of options.</string>
 	<string name="gewichtEingebenActivityEingabefelderFehler">You have not completed all input fields.</string>

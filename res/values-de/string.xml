@@ -116,7 +116,9 @@
 	<string name="bmiSpitzelActivityInfoUeberDialog">Info zu Crispus\u00ae BMI-Spitzel</string>
 	<string name="bmiSpitzelActivityInfoUeberDialogName">Body Maß Index (BMI)-Spitzel</string>
 	<string name="bmiSpitzelActivityInfoUeberDialogVersion">Version</string>
-	<string name="bmiSpitzelActivityInfoUeberDialogCopyright">Copyright\u00a9 2012 Johannes Kraus. Alle Rechte vorbehalten.</string>
+    <string name="bmiSpitzelActivityInfoUeberDialogCopyright">Copyright\u00a9 2017 Johannes Kraus. Alle Rechte
+        vorbehalten.
+    </string>
 	<string name="gewichtBearbeitenActivityTitel">Gewicht bearbeiten</string>
 	<string name="gewichtBearbeitenActivityBitte">Bitte drücken Sie lange auf einen Eintrag, um das Kontextmenü aufzurufen.</string>
 	<string name="gewichtEingebenActivityEingabefelderFehler">Sie haben nicht alle Eingabefelder gefüllt.</string>
