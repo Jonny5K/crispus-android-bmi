@@ -41,7 +41,7 @@ public class GraphActivity extends Activity {
     /**
      * Gibt an, ob es sich um ein kleines Display handelt.
      */
-    static boolean smallScreenResolution;
+    private static boolean smallScreenResolution;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +86,7 @@ public class GraphActivity extends Activity {
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.crispus_custom_titlebar);
 
         // Erzeugen eines CharacterManager
-        CharacterManager characterManager = new CharacterManager(1, 1);
+        CharacterManager characterManager = new CharacterManager();
 
         // Laden der Texturen.
         //Buchstaben für Charaktermanager
