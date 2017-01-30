@@ -6,6 +6,7 @@ import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.microedition.khronos.opengles.GL10;
 
@@ -253,6 +254,16 @@ public class Graph {
 	 */
 	private GraphAuswahlEnum graphAuswahlEnum = GraphAuswahlEnum.GEWICHT;
 
+	/**
+	 * Gibt die minimale Div-Zeit zwischen zwei Tagen aus, wenn die Einstellungen auf viertel Jahr gestellt sind.
+	 */
+	private static final int DIV_TIME_IN_DAYS_PER_QUARTER_YEAR = 2;
+	
+	/**
+	 * Gibt die minimale Div-Zeit zwischen zwei Tagen aus, wenn die Einstellungen auf Jahr gestellt sind.
+	 */
+	private static final int DIV_TIME_IN_DAYS_PER_YEAR = 8;
+	
 	/**
 	 * Hier werden die obigen Arrays in entsprechende Buffer initialisiert. Hier werden auch die Daten aus der Datenbank geladen und entsprechend aufbereitet.
 	 */
@@ -516,10 +527,13 @@ public class Graph {
 					if (GraphActivity.isSmallScreenResolution()) {
 						tmpRangeDayX *= 0.6f;
 					}
-					int lastDay = Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - zeitAuswahlEnum.getDaysOfYearValue();
+					//Gibt den ersten Tag an, der beachtet werden soll.
+					int firstDayInSelection = Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - zeitAuswahlEnum.getDaysOfYearValue();
+					//Gibt das letzte Datum an, das an der Achse gedurckt wurde.
+					Date lastOutputStringDate = new Date();
 					for (int i = 1; i <= datumGewichtArrayList.size(); i++) {
-						int x = datumGewichtArrayList.get(datumGewichtArrayList.size() - i).getDatum().get(Calendar.DAY_OF_YEAR) - lastDay;
-						if (lastDay < 0) {
+						int x = datumGewichtArrayList.get(datumGewichtArrayList.size() - i).getDatum().get(Calendar.DAY_OF_YEAR) - firstDayInSelection;
+						if (firstDayInSelection < 0) {
 							// Das kann nach einem Jahrswechse vorkommen, das die ersten Werte noch aus dem Vorjahr stammen.
 							if (datumGewichtArrayList.get(datumGewichtArrayList.size() - i).getDatum().get(Calendar.YEAR) < Calendar.getInstance().get(
 									Calendar.YEAR)) {
@@ -536,13 +550,37 @@ public class Graph {
 						}
 						gl.glRotatef(70, 0.0f, 0.0f, 1.0f);
 						if (zeitAuswahlEnum == ZeitAuswahlEnum.QUARTAL) {
-							if ((i % 2) == 0)
+							Calendar tmpCalendar = datumGewichtArrayList.get(datumGewichtArrayList.size() - i).getDatum();
+							tmpCalendar.add(Calendar.DAY_OF_MONTH, DIV_TIME_IN_DAYS_PER_QUARTER_YEAR);
+							
+							if (lastOutputStringDate.after(tmpCalendar.getTime())) {
+								tmpCalendar.add(Calendar.DAY_OF_MONTH, -DIV_TIME_IN_DAYS_PER_QUARTER_YEAR);
+								lastOutputStringDate = datumGewichtArrayList.get(datumGewichtArrayList.size() - i).getDatum().getTime();
 								characterManager.paintString(
 										gl,
 										""
 												+ GewichtEingebenActivity.simpleDateFormat.format(
-														datumGewichtArrayList.get(datumGewichtArrayList.size() - i).getDatum().getTime()).substring(0, 5),
+														lastOutputStringDate).substring(0, 5),
 										Orientation.ORIENTATION_LEFT, 1.0f, 1.0f, 1.0f);
+							} else {
+								tmpCalendar.add(Calendar.DAY_OF_MONTH, -DIV_TIME_IN_DAYS_PER_QUARTER_YEAR);
+							}
+						} else if (zeitAuswahlEnum == ZeitAuswahlEnum.JAHR) {
+							Calendar tmpCalendar = datumGewichtArrayList.get(datumGewichtArrayList.size() - i).getDatum();
+							tmpCalendar.add(Calendar.DAY_OF_MONTH, DIV_TIME_IN_DAYS_PER_YEAR);
+							
+							if (lastOutputStringDate.after(tmpCalendar.getTime())) {
+								tmpCalendar.add(Calendar.DAY_OF_MONTH, -DIV_TIME_IN_DAYS_PER_YEAR);
+								lastOutputStringDate = datumGewichtArrayList.get(datumGewichtArrayList.size() - i).getDatum().getTime();
+								characterManager.paintString(
+										gl,
+										""
+												+ GewichtEingebenActivity.simpleDateFormat.format(
+														lastOutputStringDate).substring(0, 5),
+										Orientation.ORIENTATION_LEFT, 1.0f, 1.0f, 1.0f);
+							} else {
+								tmpCalendar.add(Calendar.DAY_OF_MONTH, -DIV_TIME_IN_DAYS_PER_YEAR);
+							}
 						} else {
 							// Bei Wöchentlich und Monatlich werden alle Datumswerte ausgegeben.
 							characterManager.paintString(
@@ -700,8 +738,8 @@ public class Graph {
 	/**
 	 * Setzt den CharacterManager, mit dem Beschriftungen ausgegeben werden.
 	 * 
-	 * @param graph
-	 *            Graph der gezeichnet werden soll.
+	 * @param characterManager
+	 *            CharacterManager der gesetzt werden soll.
 	 */
 	public void setCharacterManager(CharacterManager characterManager) {
 		this.characterManager = characterManager;

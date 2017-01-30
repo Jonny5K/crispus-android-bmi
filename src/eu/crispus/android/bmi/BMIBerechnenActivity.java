@@ -1,12 +1,14 @@
 package eu.crispus.android.bmi;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.Typeface;
@@ -22,6 +24,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import eu.crispus.android.bmi.dbutil.BMISpitzelDatenbank;
+import eu.crispus.android.bmi.dbutil.DatumGewichtTable;
 import eu.crispus.android.bmi.guiutil.BMIRechner;
 import eu.crispus.android.bmi.guiutil.EditKeyListenerCloseOnEnter;
 import eu.crispus.android.bmi.util.BMIBereich;
@@ -30,7 +34,7 @@ import eu.crispus.android.bmi.util.Bereich;
 /**
  * Mit dieser Activity soll der BMI direkt berechnet werden können. Auf der Seite kann das Gewicht, das Alter und die Größe direkt eingegeben werden. Falls
  * Alter und Größe bereits in den Einstellungen hinterlegt sind, werden diese Daten als Vorgabe geladen. Es soll ein Hinweis zu dem BMI erscheinen, und auch die
- * Angabe wie viel man event. noch abnehmen oder zunehmen muss, um auf einen "guten" BMI-Wert zu kommen. 
+ * Angabe wie viel man event. noch abnehmen oder zunehmen muss, um auf einen "guten" BMI-Wert zu kommen.
  * 
  * @author Johannes Kraus
  * @version 1.0
@@ -66,12 +70,17 @@ public class BMIBerechnenActivity extends Activity {
 	 * Hier wird eine Referenz auf das Eingabefeld gespeichert, damit dieses nachträglich ausgelesen werden kann.
 	 */
 	private RadioButton radioButtonWeiblich;
-	
+
 	/**
 	 * Hier wird eine Referenz auf das Ausgabefeld für den BMI-Wert gespeichert.
 	 */
 	private TextView textViewBmiBerechnenAusgabeBmi;
-	
+
+	/**
+	 * Verbindung zur Datenbank.
+	 */
+	private BMISpitzelDatenbank bmiSpitzelDatenbank;
+
 	/**
 	 * Called when the activity is first created.
 	 */
@@ -92,6 +101,8 @@ public class BMIBerechnenActivity extends Activity {
 		radioButtonMaennlich = (RadioButton) findViewById(R.id.optionBmiBerechnenMannlich);
 		radioButtonWeiblich = (RadioButton) findViewById(R.id.optionBmiBerechnenWeiblich);
 		textViewBmiBerechnenAusgabeBmi = (TextView) findViewById(R.id.bmiBerechnenAusgabeBmi);
+
+		bmiSpitzelDatenbank = new BMISpitzelDatenbank(this);
 		try {
 			// Laden der Einstellungen aus den Preferences
 			String geschlecht = Einstellungen.getAnwendungsEinstellungen(getBaseContext()).getString(Einstellungen.KEY_GESCHLECHT, "meannlich");
@@ -149,7 +160,7 @@ public class BMIBerechnenActivity extends Activity {
 		((TextView) findViewById(R.id.bmiBerechnenInfoUebergewicht)).setText(R.string.bmiBerechnenInfoUebergewicht);
 		((TextView) findViewById(R.id.bmiBerechnenInfoAdipositas)).setText(R.string.bmiBerechnenInfoAdipositas);
 		((TextView) findViewById(R.id.bmiBerechnenInfoStarkAdipositas)).setText(R.string.bmiBerechnenInfoStarkAdipositas);
-		
+
 		if ("imperial".equals(Einstellungen.getAnwendungsEinstellungen(getBaseContext()).getString(Einstellungen.KEY_EINHEITENSYSTEM, Einstellungen.NONE))) {
 			// Hier werden die Texte für die Oberfläche vom metrischen Einheitensystem auf das Imperiale Einheitensystem gesetzt.
 			TextView tmpTextView = (TextView) findViewById(R.id.textViewGewicht);
@@ -328,6 +339,60 @@ public class BMIBerechnenActivity extends Activity {
 			}
 
 			findViewById(R.id.bmiBerechnenInformationsLayout).setVisibility(View.VISIBLE);
+
+			// Wenn an dem aktuellen Datum (heute) noch kein Gewichtswert gespeichert wurde und die Werte aus den Eingabefeldern den Preferences-Werten
+			// entsprechen, dann wird der Gewichtswert automatisch gespeichert.
+			Cursor cursor = null;
+			try {
+				String currentDateString = GewichtEingebenActivity.simpleDateFormat.format(new Date());// Aktuelles Datum
+				cursor = bmiSpitzelDatenbank.getReadableDatabase().rawQuery(DatumGewichtTable.SQL_SELECT_BY_DATE, new String[] { currentDateString });
+				if (cursor.getCount() <= 0) {
+					// Prüfen ob die Einstellungen gleich den aktuellen Werten der Eingabefelder sind.
+					// Wenn noch keine Einstellungen vorhanden sind, wird nun noch die Größe und das Geschlecht in die Preferences geschrieben.
+					if ((Einstellungen.MAENNLICH.equals(geschlecht) && radioButtonMaennlich.isChecked())
+							|| (Einstellungen.WEIBLICH.equals(geschlecht) && radioButtonWeiblich.isChecked())) {
+						if ((groesse + "").equals(groesseEinstellungen)) {
+							String stringGeburtstag = Einstellungen.getAnwendungsEinstellungen(getBaseContext()).getString(Einstellungen.KEY_GEBURTSTAG, "");
+
+							if ((stringGeburtstag != null) && !stringGeburtstag.trim().equals("")) {
+								// Berechnung des Alters aus dem Geburtstag.
+								GregorianCalendar geburtstagCalendar = new GregorianCalendar();
+								geburtstagCalendar.setTime(Einstellungen.SIMPLE_DATE_FORMAT.parse(stringGeburtstag));
+								GregorianCalendar heuteCalendar = new GregorianCalendar();
+								Log.i(TAG, geburtstagCalendar.get(Calendar.YEAR) + "");
+								Log.i(TAG, heuteCalendar.get(Calendar.YEAR) + "");
+								int alterAusEinstellungen = heuteCalendar.get(Calendar.YEAR) - geburtstagCalendar.get(Calendar.YEAR);
+								if (heuteCalendar.get(Calendar.MONTH) <= geburtstagCalendar.get(Calendar.MONTH)) {
+									if (heuteCalendar.get(Calendar.DATE) < geburtstagCalendar.get(Calendar.DATE)) {
+										alterAusEinstellungen -= 1;
+									}
+								}
+								
+								if (alter == alterAusEinstellungen) {
+									// In der Datenbank werden immer Metrische-Werte gespeichert.
+									String einheitensystem = Einstellungen.getAnwendungsEinstellungen(view.getContext()).getString(Einstellungen.KEY_EINHEITENSYSTEM,
+											"metrisch");
+									if ("metrisch".equals(einheitensystem)) {
+										bmiSpitzelDatenbank.getWritableDatabase().execSQL(DatumGewichtTable.SQL_INSERT,
+												new String[] { currentDateString, "" + gewicht, "-1", "-1", "-1" });
+									} else {
+										bmiSpitzelDatenbank.getWritableDatabase()
+												.execSQL(
+														DatumGewichtTable.SQL_INSERT,
+														new String[] { currentDateString, "" + (gewicht * BMIRechner.POUND_TO_KG), "-1",
+																"-1", "-1" });
+									}
+								}
+							}
+						}
+					}
+				}
+			} catch (Exception e) {
+				Log.e(TAG, "Fehler beim Einfügen in die Datenbank.", e);
+			} finally {
+				cursor.close();
+				bmiSpitzelDatenbank.close();
+			}
 		} catch (Exception e) {
 			Log.e(TAG, "Es ist ein Fehler in der onClickButtonGewichtEingeben()-Methode aufgetreten.", e);
 		}
@@ -409,7 +474,7 @@ public class BMIBerechnenActivity extends Activity {
 
 		return false;
 	}
-	
+
 	/**
 	 * Methode um bei einem Click auf den Zurück-Button in der Titlebar.
 	 * 
@@ -421,6 +486,21 @@ public class BMIBerechnenActivity extends Activity {
 			finish();
 		} catch (Exception e) {
 			Log.e(TAG, "Fehler beim Zurück-Button in der Title Bar.", e);
+		}
+	}
+
+	/**
+	 * Methode um bei einem Click auf den Einstellungs-Button in der Titlebar.
+	 * 
+	 * @param view
+	 *            Button der gedrückt wurde.
+	 */
+	public void onClickButtonPreferencesTitlebar(View view) {
+		try {
+			Intent intent = new Intent(this, Einstellungen.class);
+			startActivity(intent);
+		} catch (Exception e) {
+			Log.e(TAG, "Es ist ein Fehler in der onClickButtonPreferencesTitlebar()-Methode aufgetreten.", e);
 		}
 	}
 }

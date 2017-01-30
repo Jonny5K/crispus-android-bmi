@@ -147,7 +147,7 @@ public class CharacterManager {
 	 * 
 	 * @param gl
 	 *            Zeichenfläche von OpenGL
-	 * @param string
+	 * @param str
 	 *            String der ausgegeben werden soll.
 	 * @param orientation
 	 *            Ausrichtung (links, rechts, etc.) des Textes.
@@ -327,7 +327,7 @@ public class CharacterManager {
 			
 				//Anpassung weil die Texture scheinbar auf dem Kopf steht!
 				row = 6 - row;
-				
+
 				float texture[] = {
 						column * LETTER_WIDTH, TEXTURE_HEIGHT - (row * LETTER_HEIGHT),// links oben
 						(column * LETTER_WIDTH) + LETTER_WIDTH, TEXTURE_HEIGHT - (row * LETTER_HEIGHT),// rechts oben
@@ -452,7 +452,9 @@ public class CharacterManager {
 		gl.glTexParameterf(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_S, GL10.GL_REPEAT);
 		gl.glTexParameterf(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_T, GL10.GL_REPEAT);
 
-		GLUtils.texImage2D(GL10.GL_TEXTURE_2D, 0, bitmapLetters, 0);
+		if (bitmapLetters != null) {
+			GLUtils.texImage2D(GL10.GL_TEXTURE_2D, 0, bitmapLetters, 0);
+		}
 	}
 
 	/**
@@ -474,7 +476,9 @@ public class CharacterManager {
 		gl.glTexParameterf(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_S, GL10.GL_REPEAT);
 		gl.glTexParameterf(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_T, GL10.GL_REPEAT);
 
-		GLUtils.texImage2D(GL10.GL_TEXTURE_2D, 0, bitmapDigits, 0);
+		if (bitmapDigits != null) {
+			GLUtils.texImage2D(GL10.GL_TEXTURE_2D, 0, bitmapDigits, 0);
+		}
 	}
 
 	/**

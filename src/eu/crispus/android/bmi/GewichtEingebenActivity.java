@@ -268,7 +268,6 @@ public class GewichtEingebenActivity extends Activity {
 				@Override
 				public void onClick(DialogInterface dialog, int id) {
 					dialog.cancel();
-
 				}
 			});
 			return builder.create();
@@ -566,6 +565,21 @@ public class GewichtEingebenActivity extends Activity {
 			finish();
 		} catch (Exception e) {
 			Log.e(TAG, "Fehler beim Zurück-Button in der Title Bar.", e);
+		}
+	}
+	
+	/**
+	 * Methode um bei einem Click auf den Einstellungs-Button in der Titlebar.
+	 * 
+	 * @param view
+	 *            Button der gedrückt wurde.
+	 */
+	public void onClickButtonPreferencesTitlebar(View view) {
+		try {
+			Intent intent = new Intent(this, Einstellungen.class);
+			startActivity(intent);
+		} catch (Exception e) {
+			Log.e(TAG, "Es ist ein Fehler in der onClickButtonPreferencesTitlebar()-Methode aufgetreten.", e);
 		}
 	}
 }

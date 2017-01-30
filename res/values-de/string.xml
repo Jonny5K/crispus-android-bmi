@@ -8,6 +8,7 @@
 	<string name="buttonGraphAnzeigen">Graph anzeigen</string>
 	<string name="buttonBmiBerechnen">BMI-Berechnung</string>
 	<string name="buttonEinstellungen">Einstellungen</string>
+	<string name="buttonPreferencesMenu">Einstellungen</string>
 	<string name="startseiteIntro">Bitte wählen Sie eine der folgenden Optionen aus:</string>
 
 	<!-- Einträge für Menüs -->
@@ -130,6 +131,8 @@
 	<string name="datumGewichtsAdapterGewicht">Gewicht</string>
 	<string name="datumGewichtsAdapterIhrBMI">Ihr BMI</string>
 	<string name="datumGewichtsAdapterIhrberechneterBMI">Ihr berechneter BMI</string>
+	<string name="preferencesHintText">Für die korrekte Funktion müssen die folgenden Angaben in den Einstellungen vervollständigt werden:</string>
+	<string name="preferencesTitleText">Information</string>
 	
 	<string name="pfundKurztext">lb</string>
 	<string name="inchKurztext">\"</string>

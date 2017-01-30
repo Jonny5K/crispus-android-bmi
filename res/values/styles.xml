@@ -22,6 +22,13 @@
 		<item name="android:textColor">@color/textfarbe_schrift</item>
 	</style>
 	
+	<style name="SchaltflaechePreferences">
+		<item name="android:layout_width">99dp</item>
+		<item name="android:layout_height">34dip</item>
+		<item name="android:background">@drawable/button_preferences</item>
+		<item name="android:textColor">@color/textfarbe_schrift</item>
+	</style>
+	
 	<style name="Schaltflaeche" parent="@style/Inhaltselement">
 		<item name="android:background">@drawable/button</item>
 	</style>

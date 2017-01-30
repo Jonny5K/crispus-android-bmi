@@ -16,6 +16,7 @@ import android.preference.PreferenceActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 
 /**
  * Klasse zum bearbeiten der App-Einstellungen
@@ -35,7 +36,17 @@ public class Einstellungen extends PreferenceActivity implements SharedPreferenc
 	 * zurückgegeben werden.
 	 */
 	public static final String NONE = "NONE";
-
+	
+	/**
+	 * Einfache Stringkonstante zum auslesen der Preferences.
+	 */
+	public static final String MAENNLICH = "maennlich";
+	
+	/**
+	 * Einfache Stringkonstante zum auslesen der Preferences.
+	 */
+	public static final String WEIBLICH = "weiblich";
+	
 	/**
 	 * Key um auf die Körpergröße in den Einstellungen zugreifen zu können.
 	 */
@@ -130,6 +141,7 @@ public class Einstellungen extends PreferenceActivity implements SharedPreferenc
 			super.onCreate(savedInstanceState);
 			Einstellungen.loadLocalInformation(getBaseContext());
 			getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.crispus_custom_titlebar);
+			((Button) findViewById(R.id.buttonPreferencesTitlebar)).setVisibility(Button.INVISIBLE);
 			addPreferencesFromResource(R.layout.einstellungen);
 
 			getListView().setCacheColorHint(0);

@@ -31,11 +31,13 @@
 		<item>weekly</item>
 		<item>monthly</item>
 		<item>quarterly</item>
+		<item>yearly</item>
 	</string-array>
 	<string-array name="listReturnValueZeitauswahl">
 		<item>7</item>
 		<item>31</item>
 		<item>93</item>
+		<item>365</item>
 	</string-array>
 	
 	<string-array name="listDisplayAmputationen">
